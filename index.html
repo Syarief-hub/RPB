@@ -1,268 +1,267 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopee UI Clone</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="app-container">
-      <!-- Header Section -->
-      <header class="main-header" id="main-header">
-        <div class="search-container">
-          <div class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Diskon Top Up Game" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopee UI Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="main-header" id="main-header">
+      <div class="search-container">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Diskon Top Up Game" />
+        </div>
+        <div class="header-action">
+          <div class="coin-badge">
+            <i class="fas fa-coins text-yellow"></i> Klaim 50RB
+            <i class="fas fa-chevron-right"></i>
           </div>
-          <div class="header-action">
-            <div class="coin-badge">
-              <i class="fas fa-coins text-yellow"></i> Klaim 50RB
-              <i class="fas fa-chevron-right"></i>
+          <div class="notification-icon">
+            <i class="far fa-bell"></i>
+            <span class="badge">24</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- VIEW: HOME -->
+    <div id="home-view">
+      <!-- Hero Card Section -->
+      <section class="hero-section">
+        <div class="hero-grid">
+          <!-- ShopeePay Left Card -->
+          <div class="card shopeepay-card">
+            <div class="card-header">
+              <div class="brand">
+                <i class="fas fa-wallet"></i> ShopeePay
+                <i class="fas fa-eye"></i>
+              </div>
             </div>
-            <div class="notification-icon">
-              <i class="far fa-bell"></i>
-              <span class="badge">24</span>
+            <div class="balance">Rp 479</div>
+            <div class="card-footer">
+              <p>
+                Upgrade sekarang untuk dapat
+                <span class="highlight">bunga 6%!</span>
+                <i class="fas fa-chevron-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column Cards -->
+          <div class="right-cards">
+            <div class="card small-card spaylater-card">
+              <div class="card-top">
+                <div class="brand">
+                  <i class="fas fa-file-invoice-dollar"></i> SPayLater
+                </div>
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="card-action">Aktifkan Sekarang</div>
+            </div>
+            <div class="card small-card spinjam-card">
+              <div class="badge-float">Hadiah 25RB</div>
+              <div class="card-top">
+                <div class="brand">
+                  <i class="fas fa-hand-holding-usd"></i> SPinjam
+                </div>
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="card-action">Aktifkan Sekarang</div>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <!-- VIEW: HOME -->
-      <div id="home-view">
-        <!-- Hero Card Section -->
-        <section class="hero-section">
-          <div class="hero-grid">
-            <!-- ShopeePay Left Card -->
-            <div class="card shopeepay-card">
-              <div class="card-header">
-                <div class="brand">
-                  <i class="fas fa-wallet"></i> ShopeePay
-                  <i class="fas fa-eye"></i>
-                </div>
-              </div>
-              <div class="balance">Rp 479</div>
-              <div class="card-footer">
-                <p>
-                  Upgrade sekarang untuk dapat
-                  <span class="highlight">bunga 6%!</span>
-                  <i class="fas fa-chevron-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <!-- Right Column Cards -->
-            <div class="right-cards">
-              <div class="card small-card spaylater-card">
-                <div class="card-top">
-                  <div class="brand">
-                    <i class="fas fa-file-invoice-dollar"></i> SPayLater
-                  </div>
-                  <i class="fas fa-chevron-right"></i>
-                </div>
-                <div class="card-action">Aktifkan Sekarang</div>
-              </div>
-              <div class="card small-card spinjam-card">
-                <div class="badge-float">Hadiah 25RB</div>
-                <div class="card-top">
-                  <div class="brand">
-                    <i class="fas fa-hand-holding-usd"></i> SPinjam
-                  </div>
-                  <i class="fas fa-chevron-right"></i>
-                </div>
-                <div class="card-action">Aktifkan Sekarang</div>
-              </div>
-            </div>
+      <!-- Quick Actions Row -->
+      <section class="quick-actions-section">
+        <div class="action-item">
+          <div class="icon-circle icon-orange-outline">
+            <i class="fas fa-plus"></i>
           </div>
-        </section>
-
-        <!-- Quick Actions Row -->
-        <section class="quick-actions-section">
-          <div class="action-item">
-            <div class="icon-circle icon-orange-outline">
-              <i class="fas fa-plus"></i>
-            </div>
-            <span>Isi Saldo</span>
+          <span>Isi Saldo</span>
+        </div>
+        <div class="action-item">
+          <div class="icon-circle icon-orange-outline">
+            <i class="fas fa-money-bill-wave"></i>
           </div>
-          <div class="action-item">
-            <div class="icon-circle icon-orange-outline">
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
-            <span>Tarik Tunai</span>
+          <span>Tarik Tunai</span>
+        </div>
+        <div class="action-item">
+          <div class="icon-circle icon-orange-outline">
+            <i class="fas fa-paper-plane"></i>
           </div>
-          <div class="action-item">
-            <div class="icon-circle icon-orange-outline">
-              <i class="fas fa-paper-plane"></i>
-            </div>
-            <span>Kirim Uang</span>
+          <span>Kirim Uang</span>
+        </div>
+        <div class="action-item">
+          <div class="icon-circle icon-orange-outline">
+            <i class="fas fa-list-alt"></i>
           </div>
-          <div class="action-item">
-            <div class="icon-circle icon-orange-outline">
-              <i class="fas fa-list-alt"></i>
-            </div>
-            <span>Riwayat</span>
-          </div>
-        </section>
+          <span>Riwayat</span>
+        </div>
+      </section>
 
       <!-- Services Grid Slider -->
       <div class="service-slider-container">
-          <div class="service-slider" id="serviceSlider">
-              
-              <!-- PAGE 1: GAYA HIDUP (Existing) -->
-              <section class="services-grid-section grid-page" id="page-gayahidup">
-                <div class="service-item">
-                    <i class="fas fa-mobile-alt text-green"></i>
-                    <span>Pulsa & Tagihan</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-bolt text-red"></i>
-                    <span>Listrik PLN</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-money-check-alt text-teal"></i>
-                    <span>Uang Elektronik</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-wifi text-yellow"></i>
-                    <span>Paket Data</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-utensils text-orange"></i>
-                    <span>ShopeeFood</span>
-                </div>
-                <div class="service-item">
-                    <div class="badge-text">KIRIM INSTANT</div>
-                    <i class="fas fa-box text-blue"></i>
-                    <span>Kirim Paket 30 Mnt</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-file-invoice text-teal"></i>
-                    <span>Tagihan Saya</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-th-large text-orange"></i>
-                    <span>Lihat Semua</span>
-                </div>
-              </section>
+        <div class="service-slider" id="serviceSlider">
 
-              <!-- PAGE 2: KEUANGAN (Image 3) -->
-              <section class="services-grid-section grid-page" id="page-keuangan">
-                <div class="service-item">
-                    <i class="fas fa-hand-holding-usd text-orange"></i>
-                    <span>SPinjam s/d 100JT</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-wallet text-orange"></i>
-                    <span>SPayLater</span>
-                </div>
-                <div class="service-item">
-                    <div class="badge-text">PROMO</div>
-                    <i class="fas fa-desktop text-orange"></i>
-                    <span>SPayLater Limit Xtra</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-gem text-yellow"></i>
-                    <span>Emas</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-store text-blue"></i>
-                    <span>Daftar Jadi Merchant</span>
-                </div>
-                <div class="service-item">
-                    <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">PROMO</div>
-                    <i class="fas fa-shield-alt text-orange"></i>
-                    <span>Asuransi</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-tachometer-alt text-orange"></i>
-                    <span>Shopee Meter</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-th-large text-orange"></i>
-                    <span>Lihat Semua</span>
-                </div>
-              </section>
+          <!-- PAGE 1: GAYA HIDUP (Existing) -->
+          <section class="services-grid-section grid-page" id="page-gayahidup">
+            <div class="service-item">
+              <i class="fas fa-mobile-alt text-green"></i>
+              <span>Pulsa & Tagihan</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-bolt text-red"></i>
+              <span>Listrik PLN</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-money-check-alt text-teal"></i>
+              <span>Uang Elektronik</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-wifi text-yellow"></i>
+              <span>Paket Data</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-utensils text-orange"></i>
+              <span>ShopeeFood</span>
+            </div>
+            <div class="service-item">
+              <div class="badge-text">KIRIM INSTANT</div>
+              <i class="fas fa-box text-blue"></i>
+              <span>Kirim Paket 30 Mnt</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-file-invoice text-teal"></i>
+              <span>Tagihan Saya</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-th-large text-orange"></i>
+              <span>Lihat Semua</span>
+            </div>
+          </section>
 
-              <!-- PAGE 3: KIRIM UANG (Image 2) -->
-              <section class="services-grid-section grid-page" id="page-kirimuang">
-                <div class="service-item">
-                    <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">GRATIS</div>
-                    <i class="fas fa-wallet text-teal"></i>
-                    <span>Kirim ke E-Wallet</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-hand-holding-heart text-orange"></i>
-                    <span>Minta Uang</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-wallet text-orange"></i>
-                    <span>Kirim ke ShopeePay</span>
-                </div>
-                <div class="service-item">
-                    <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">GRATIS</div>
-                    <i class="fas fa-university text-blue"></i>
-                    <span>Kirim ke Bank</span>
-                </div>
-                <div class="service-item">
-                     <i class="fas fa-envelope-open-text text-teal"></i>
-                    <span>Sebar ShopeePay</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-money-check text-blue"></i>
-                    <span>Virtual Account</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-link text-blue"></i>
-                    <span>Hubungkan BI-Fast</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-th-large text-orange"></i>
-                    <span>Lihat Semua</span>
-                </div>
-              </section>
+          <!-- PAGE 2: KEUANGAN (Image 3) -->
+          <section class="services-grid-section grid-page" id="page-keuangan">
+            <div class="service-item">
+              <i class="fas fa-hand-holding-usd text-orange"></i>
+              <span>SPinjam s/d 100JT</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-wallet text-orange"></i>
+              <span>SPayLater</span>
+            </div>
+            <div class="service-item">
+              <div class="badge-text">PROMO</div>
+              <i class="fas fa-desktop text-orange"></i>
+              <span>SPayLater Limit Xtra</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-gem text-yellow"></i>
+              <span>Emas</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-store text-blue"></i>
+              <span>Daftar Jadi Merchant</span>
+            </div>
+            <div class="service-item">
+              <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">PROMO</div>
+              <i class="fas fa-shield-alt text-orange"></i>
+              <span>Asuransi</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-tachometer-alt text-orange"></i>
+              <span>Shopee Meter</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-th-large text-orange"></i>
+              <span>Lihat Semua</span>
+            </div>
+          </section>
 
-              <!-- PAGE 4: PROMO (Image 1) -->
-              <section class="services-grid-section grid-page" id="page-promo">
-                <div class="service-item">
-                    <i class="fas fa-map-marker-alt text-orange"></i>
-                    <span>ShopeePay Sekitarmu</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-gift text-yellow"></i>
-                    <span>Hadiah Harian</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-qrcode text-orange"></i>
-                    <span>SPayLater Bayar QRIS</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-bullseye text-orange"></i>
-                    <span>Misi Berhadiah</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-gamepad text-blue"></i>
-                    <span>Top Up Games</span>
-                </div>
-                <div class="service-item">
-                    <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">PROMO</div>
-                    <i class="fas fa-qrcode text-orange"></i>
-                    <span>Promo QRIS</span>
-                </div>
-                <div class="service-item">
-                    <i class="fab fa-google-play text-green"></i>
-                    <span>Google Play</span>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-th-large text-orange"></i>
-                    <span>Lihat Semua</span>
-                </div>
-              </section>
+          <!-- PAGE 3: KIRIM UANG (Image 2) -->
+          <section class="services-grid-section grid-page" id="page-kirimuang">
+            <div class="service-item">
+              <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">GRATIS</div>
+              <i class="fas fa-wallet text-teal"></i>
+              <span>Kirim ke E-Wallet</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-hand-holding-heart text-orange"></i>
+              <span>Minta Uang</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-wallet text-orange"></i>
+              <span>Kirim ke ShopeePay</span>
+            </div>
+            <div class="service-item">
+              <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">GRATIS</div>
+              <i class="fas fa-university text-blue"></i>
+              <span>Kirim ke Bank</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-envelope-open-text text-teal"></i>
+              <span>Sebar ShopeePay</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-money-check text-blue"></i>
+              <span>Virtual Account</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-link text-blue"></i>
+              <span>Hubungkan BI-Fast</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-th-large text-orange"></i>
+              <span>Lihat Semua</span>
+            </div>
+          </section>
 
-          </div>
+          <!-- PAGE 4: PROMO (Image 1) -->
+          <section class="services-grid-section grid-page" id="page-promo">
+            <div class="service-item">
+              <i class="fas fa-map-marker-alt text-orange"></i>
+              <span>ShopeePay Sekitarmu</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-gift text-yellow"></i>
+              <span>Hadiah Harian</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-qrcode text-orange"></i>
+              <span>SPayLater Bayar QRIS</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-bullseye text-orange"></i>
+              <span>Misi Berhadiah</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-gamepad text-blue"></i>
+              <span>Top Up Games</span>
+            </div>
+            <div class="service-item">
+              <div class="badge-text" style="background:#ee4d2d; color:white; border:none;">PROMO</div>
+              <i class="fas fa-qrcode text-orange"></i>
+              <span>Promo QRIS</span>
+            </div>
+            <div class="service-item">
+              <i class="fab fa-google-play text-green"></i>
+              <span>Google Play</span>
+            </div>
+            <div class="service-item">
+              <i class="fas fa-th-large text-orange"></i>
+              <span>Lihat Semua</span>
+            </div>
+          </section>
+
+        </div>
       </div>
 
       <!-- Menu Tabs (Gaya Hidup etc) - Controls for Slider -->
@@ -273,670 +272,873 @@
         <span class="tab" data-target="page-promo">Promo</span>
       </section>
 
-        <!-- BI Fast Banner -->
-        <section class="banner-section">
-          <div class="bi-fast-banner">
-            <div class="banner-content">
-              <span class="bi-title">BI-Fast</span>
-              <span class="bi-desc">Hubungkan Sekarang!</span>
-            </div>
-            <i class="fas fa-chevron-right"></i>
+      <!-- BI Fast Banner -->
+      <section class="banner-section">
+        <div class="bi-fast-banner">
+          <div class="banner-content">
+            <span class="bi-title">BI-Fast</span>
+            <span class="bi-desc">Hubungkan Sekarang!</span>
           </div>
-        </section>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </section>
 
-        <!-- Promo Banners -->
-        <section class="promo-banners">
-          <div class="promo-card bg-blue">
-            <div class="promo-header">TIKET KERETA</div>
-            <div class="promo-body">
-              <div class="promo-route">BOGOR - SUKABUMI</div>
-              <div class="promo-price">
-                <span class="crossed">35.000</span> 7.500
-              </div>
+      <!-- Promo Banners -->
+      <section class="promo-banners">
+        <div class="promo-card bg-blue">
+          <div class="promo-header">TIKET KERETA</div>
+          <div class="promo-body">
+            <div class="promo-route">BOGOR - SUKABUMI</div>
+            <div class="promo-price">
+              <span class="crossed">35.000</span> 7.500
             </div>
           </div>
-          <div class="promo-card bg-orange big-promo">
-            <div class="top-tag">SPayLater</div>
-            <div class="main-text">DISKON S/D</div>
-            <div class="price-big">200RB</div>
-          </div>
-          <div class="promo-card bg-blue">
-            <div class="promo-header">PAKET DATA 15GB</div>
-            <div class="promo-body">
-              <div class="promo-price">
-                <span class="crossed">RP50.000</span> 46RB
-              </div>
+        </div>
+        <div class="promo-card bg-orange big-promo">
+          <div class="top-tag">SPayLater</div>
+          <div class="main-text">DISKON S/D</div>
+          <div class="price-big">200RB</div>
+        </div>
+        <div class="promo-card bg-blue">
+          <div class="promo-header">PAKET DATA 15GB</div>
+          <div class="promo-body">
+            <div class="promo-price">
+              <span class="crossed">RP50.000</span> 46RB
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </section>
 
       <!-- New Home Bottom Section (Deals, Flash Sale, Footer) -->
       <section class="home-extra-deals">
-          <div class="deals-grid">
-               <div class="deal-card-large">
-                   <div class="deal-header">
-                        <div class="dh-left"><i class="fas fa-map-marker-alt text-orange"></i> Promo Deals</div>
-                        <div class="badge-juaranya">Juaranya</div>
-                   </div>
-                   <div class="deal-sub">Voucher Rp1 <span class="text-orange">Diskon 110RB</span></div>
-                   <div class="deal-img-placeholder">
-                       <i class="fas fa-pizza-slice" style="font-size: 40px; color: #ff9800;"></i>
-                   </div>
-               </div>
-               <div class="deal-col-right">
-                   <div class="deal-row-small">
-                       <div class="dr-icon"><i class="fas fa-trophy text-yellow"></i></div>
-                       <div class="dr-text">
-                           <div class="dr-title">Gratis Admin</div>
-                           <div class="dr-desc">Isi Saldo 25x, Tarik Tunai 5x/bln</div>
-                       </div>
-                       <i class="fas fa-chevron-right text-gray"></i>
-                   </div>
-                   <div class="deal-row-small">
-                       <div class="dr-icon"><i class="fas fa-sync text-orange"></i></div>
-                       <div class="dr-text">
-                           <div class="dr-title">Cashback Saldo</div>
-                           <div class="dr-desc">Bayar Apapun Dapat Saldo s/d Rp100RB</div>
-                       </div>
-                       <i class="fas fa-chevron-right text-gray"></i>
-                   </div>
-               </div>
+        <div class="deals-grid">
+          <div class="deal-card-large">
+            <div class="deal-header">
+              <div class="dh-left"><i class="fas fa-map-marker-alt text-orange"></i> Promo Deals</div>
+              <div class="badge-juaranya">Juaranya</div>
+            </div>
+            <div class="deal-sub">Voucher Rp1 <span class="text-orange">Diskon 110RB</span></div>
+            <div class="deal-img-placeholder">
+              <i class="fas fa-pizza-slice" style="font-size: 40px; color: #ff9800;"></i>
+            </div>
           </div>
+          <div class="deal-col-right">
+            <div class="deal-row-small">
+              <div class="dr-icon"><i class="fas fa-trophy text-yellow"></i></div>
+              <div class="dr-text">
+                <div class="dr-title">Gratis Admin</div>
+                <div class="dr-desc">Isi Saldo 25x, Tarik Tunai 5x/bln</div>
+              </div>
+              <i class="fas fa-chevron-right text-gray"></i>
+            </div>
+            <div class="deal-row-small">
+              <div class="dr-icon"><i class="fas fa-sync text-orange"></i></div>
+              <div class="dr-text">
+                <div class="dr-title">Cashback Saldo</div>
+                <div class="dr-desc">Bayar Apapun Dapat Saldo s/d Rp100RB</div>
+              </div>
+              <i class="fas fa-chevron-right text-gray"></i>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="flash-sale-section">
-          <div class="fs-header">
-              <div class="fs-title-row">
-                  <span class="fs-logo">F<i class="fas fa-bolt text-orange"></i>ASH SALE</span>
-                  <span class="fs-text-gray">Berakhir dalam</span>
-                  <div class="fs-timer">
-                      <span>04</span> : <span>11</span> : <span>57</span>
-                  </div>
-              </div>
-              <i class="fas fa-chevron-right text-gray"></i>
+        <div class="fs-header">
+          <div class="fs-title-row">
+            <span class="fs-logo">F<i class="fas fa-bolt text-orange"></i>ASH SALE</span>
+            <span class="fs-text-gray">Berakhir dalam</span>
+            <div class="fs-timer">
+              <span>04</span> : <span>11</span> : <span>57</span>
+            </div>
           </div>
-          <div class="fs-scroll">
-              <!-- Card 1 -->
-              <div class="fs-card">
-                  <div class="fs-img-box bg-orange-gradient">
-                      <span class="fs-tag">90% OFF</span>
-                      <div class="fs-brand-logo"><i class="fas fa-wallet"></i> SPay</div>
-                      <div class="fs-brand-sub">Booking.com</div>
-                      <i class="fas fa-plane-departure fs-img-deco"></i>
-                  </div>
-                  <div class="fs-info">
-                      <div class="fs-name">Voucher 10.000 Booking...</div>
-                      <div class="fs-price">Rp1.000</div>
-                      <div class="fs-bar-container">
-                          <div class="fs-bar"><div class="fs-fill" style="width:20%"></div></div>
-                          <span class="fs-sold">4 TERJUAL</span>
-                      </div>
-                  </div>
+          <i class="fas fa-chevron-right text-gray"></i>
+        </div>
+        <div class="fs-scroll">
+          <!-- Card 1 -->
+          <div class="fs-card">
+            <div class="fs-img-box bg-orange-gradient">
+              <span class="fs-tag">90% OFF</span>
+              <div class="fs-brand-logo"><i class="fas fa-wallet"></i> SPay</div>
+              <div class="fs-brand-sub">Booking.com</div>
+              <i class="fas fa-plane-departure fs-img-deco"></i>
+            </div>
+            <div class="fs-info">
+              <div class="fs-name">Voucher 10.000 Booking...</div>
+              <div class="fs-price">Rp1.000</div>
+              <div class="fs-bar-container">
+                <div class="fs-bar">
+                  <div class="fs-fill" style="width:20%"></div>
+                </div>
+                <span class="fs-sold">4 TERJUAL</span>
               </div>
-              <!-- Card 2 -->
-              <div class="fs-card">
-                  <div class="fs-img-box bg-orange-gradient">
-                      <span class="fs-tag">40% OFF</span>
-                      <div class="fs-brand-logo"><i class="fas fa-wallet"></i> SPay</div>
-                      <div class="fs-brand-sub">GRAB</div>
-                      <i class="fas fa-car fs-img-deco"></i>
-                  </div>
-                   <div class="fs-info">
-                      <div class="fs-name">Voucher 5.000 Grab...</div>
-                      <div class="fs-price">Rp3.000</div>
-                      <div class="fs-bar-container">
-                          <div class="fs-bar"><div class="fs-fill" style="width:50%"></div></div>
-                          <span class="fs-sold">31 TERJUAL</span>
-                      </div>
-                  </div>
-              </div>
-               <!-- Card 3 -->
-              <div class="fs-card">
-                  <div class="fs-img-box bg-orange-gradient">
-                      <div class="fs-brand-logo"><i class="fas fa-wallet"></i> SPay</div>
-                      <div class="fs-brand-sub">TIX ID</div>
-                      <i class="fas fa-film fs-img-deco"></i>
-                  </div>
-                   <div class="fs-info">
-                      <div class="fs-name">Voucher 10.000 Tix...</div>
-                      <div class="fs-price">Rp1.000</div>
-                      <div class="fs-bar-container">
-                          <div class="fs-bar"><div class="fs-fill" style="width:10%"></div></div>
-                          <span class="fs-sold">19 TERJUAL</span>
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
+          <!-- Card 2 -->
+          <div class="fs-card">
+            <div class="fs-img-box bg-orange-gradient">
+              <span class="fs-tag">40% OFF</span>
+              <div class="fs-brand-logo"><i class="fas fa-wallet"></i> SPay</div>
+              <div class="fs-brand-sub">GRAB</div>
+              <i class="fas fa-car fs-img-deco"></i>
+            </div>
+            <div class="fs-info">
+              <div class="fs-name">Voucher 5.000 Grab...</div>
+              <div class="fs-price">Rp3.000</div>
+              <div class="fs-bar-container">
+                <div class="fs-bar">
+                  <div class="fs-fill" style="width:50%"></div>
+                </div>
+                <span class="fs-sold">31 TERJUAL</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="fs-card">
+            <div class="fs-img-box bg-orange-gradient">
+              <div class="fs-brand-logo"><i class="fas fa-wallet"></i> SPay</div>
+              <div class="fs-brand-sub">TIX ID</div>
+              <i class="fas fa-film fs-img-deco"></i>
+            </div>
+            <div class="fs-info">
+              <div class="fs-name">Voucher 10.000 Tix...</div>
+              <div class="fs-price">Rp1.000</div>
+              <div class="fs-bar-container">
+                <div class="fs-bar">
+                  <div class="fs-fill" style="width:10%"></div>
+                </div>
+                <span class="fs-sold">19 TERJUAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="bottom-banner-promo">
-          <div class="banner-orange-box">
-              <div class="banner-content">
-                    <!-- Simple representation of the big banner -->
-                   <div class="bb-left">DISKON <br><span class="bb-huge">100%</span></div>
-                   <div class="bb-plus"><i class="fas fa-plus-circle"></i></div>
-                   <div class="bb-right">GRATIS <br>ONGKIR <br><span class="bb-small">SEMUA RESTO</span></div>
-              </div>
-              <div class="bb-footer">PROMO PENGGUNA BARU</div>
+        <div class="banner-orange-box">
+          <div class="banner-content">
+            <!-- Simple representation of the big banner -->
+            <div class="bb-left">DISKON <br><span class="bb-huge">100%</span></div>
+            <div class="bb-plus"><i class="fas fa-plus-circle"></i></div>
+            <div class="bb-right">GRATIS <br>ONGKIR <br><span class="bb-small">SEMUA RESTO</span></div>
           </div>
+          <div class="bb-footer">PROMO PENGGUNA BARU</div>
+        </div>
       </section>
 
       <footer class="legal-footer">
-          <p>ShopeePay telah berizin dan diawasi oleh:</p>
-          <div class="bi-logo">
-              <i class="fas fa-landmark"></i> BANK INDONESIA
-              <span class="bi-sub">BANK SENTRAL REPUBLIK INDONESIA</span>
-          </div>
+        <p>ShopeePay telah berizin dan diawasi oleh:</p>
+        <div class="bi-logo">
+          <i class="fas fa-landmark"></i> BANK INDONESIA
+          <span class="bi-sub">BANK SENTRAL REPUBLIK INDONESIA</span>
+        </div>
       </footer>
 
-      </div>
-      <!-- End Home View -->
+    </div>
+    <!-- End Home View -->
 
-      <!-- VIEW: FINANCE (KEUANGAN) -->
-      <div id="finance-view" style="display: none">
-        <!-- Finance Hero (Image 4 Style) -->
-        <section class="finance-hero">
-          <div class="finance-card-row">
-            <div class="f-card spaylater-big">
-              <div class="f-header">
-                <i class="fas fa-file-invoice-dollar"></i> SPayLater
-              </div>
-              <div class="f-body">
-                <span>Limit kredit s/d</span>
-                <div class="limit-amount">Rp 50.000.000</div>
-              </div>
-              <div class="f-action">Aktifkan Sekarang...</div>
+    <!-- VIEW: FINANCE (KEUANGAN) -->
+    <div id="finance-view" style="display: none">
+      <!-- Finance Hero (Image 4 Style) -->
+      <section class="finance-hero">
+        <div class="finance-card-row">
+          <div class="f-card spaylater-big">
+            <div class="f-header">
+              <i class="fas fa-file-invoice-dollar"></i> SPayLater
             </div>
-            <div class="f-card spinjam-big">
-              <div class="f-header">
-                <i class="fas fa-hand-holding-usd"></i> SPinjam
-              </div>
-              <div class="f-body">
-                <span>Limit kredit s/d</span>
-                <div class="limit-amount">Rp 100.000.000</div>
-              </div>
-              <div class="f-action">Aktifkan Sekarang...</div>
+            <div class="f-body">
+              <span>Limit kredit s/d</span>
+              <div class="limit-amount">Rp 50.000.000</div>
             </div>
+            <div class="f-action">Aktifkan Sekarang...</div>
           </div>
-        </section>
-
-        <!-- Finance Slider -->
-        <div class="service-slider-container">
-            <div class="service-slider" id="financeSlider">
-                <!-- Page 1: Existing Finance Items -->
-                <section class="finance-grid grid-page" style="padding: 20px 15px !important;">
-                  <div class="f-grid-item">
-                    <div class="bank-icon seabank">S</div>
-                    <span>SeaBank</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-qrcode text-orange"></i>
-                    <div class="badge-mini">0%</div>
-                    <span>SPayLater Bayar QRIS</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-desktop text-orange"></i>
-                    <span>SPayLater Limit Xtra</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-shopping-bag text-teal"></i>
-                    <span>Bayar Ecommerce</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-mobile-alt text-blue"></i>
-                    <span>Pulsa dan Tagihan</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-gem text-yellow"></i>
-                    <span>Emas</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-tachometer-alt text-orange"></i>
-                    <span>Shopee Meter</span>
-                  </div>
-                  <div class="f-grid-item">
-                    <i class="fas fa-shield-alt text-orange"></i>
-                    <span>Asuransi</span>
-                  </div>
-                </section>
-
-                <!-- Page 2: New Investment Items -->
-                <section class="finance-grid grid-page" style="padding: 20px 15px !important; align-content: start;">
-                   <div class="f-grid-item">
-                        <div class="icon-circle" style="background:#fff; border:1px solid #ddd; width:35px; height:35px;">
-                             <i class="fas fa-chart-line text-orange"></i>
-                             <div class="badge-mini" style="top:15px; right:-5px; font-size:6px;">Rp</div>
-                        </div>
-                        <span>Investasi Pintar</span>
-                   </div>
-                   <div class="f-grid-item">
-                        <div class="icon-circle" style="background: linear-gradient(to bottom, #ffcc80, #ffab91); width:35px; height:35px; border-radius:8px;">
-                            <i class="fas fa-chart-area" style="color:white;"></i>
-                        </div>
-                        <span>Reksa Dana</span>
-                   </div>
-                </section>
+          <div class="f-card spinjam-big">
+            <div class="f-header">
+              <i class="fas fa-hand-holding-usd"></i> SPinjam
             </div>
+            <div class="f-body">
+              <span>Limit kredit s/d</span>
+              <div class="limit-amount">Rp 100.000.000</div>
+            </div>
+            <div class="f-action">Aktifkan Sekarang...</div>
+          </div>
         </div>
+      </section>
 
-        <!-- Dots for Finance Slider -->
-        <div class="dots-indicator" id="financeDots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-        </div>
-
-        <!-- Insurance Promo -->
-        <section class="insurance-promo">
-          <div class="ins-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="ins-text">
-            <div class="ins-title">Asuransi</div>
-            <div class="ins-sub">GRATIS proteksi kecelakaan Rp1JT</div>
-          </div>
-          <i class="fas fa-chevron-right"></i>
-        </section>
-
-        <!-- Voucher Produk List -->
-        <section class="voucher-list">
-          <div class="section-title">
-            <span>Voucher Produk</span>
-            <span class="see-all">Lihat Semua ></span>
-          </div>
-          <div class="horizontal-scroll">
-            <!-- Item 1 -->
-            <div class="voucher-card">
-              <div class="vc-top">
-                <div class="vc-title">Bunga Cicilan 0%</div>
-                <div class="vc-tags">
-                  <span class="tag">SPayLater</span>
-                  <span class="tag">Di Toko</span>
-                </div>
-              </div>
-              <button class="vc-btn">Pakai</button>
+      <!-- Finance Slider -->
+      <div class="service-slider-container">
+        <div class="service-slider" id="financeSlider">
+          <!-- Page 1: Existing Finance Items -->
+          <section class="finance-grid grid-page" style="padding: 20px 15px !important;">
+            <div class="f-grid-item">
+              <div class="bank-icon seabank">S</div>
+              <span>SeaBank</span>
             </div>
-            <!-- Item 2 -->
-            <div class="voucher-card">
-              <div class="vc-top">
-                <div class="vc-title">Bunga Cicilan 0%</div>
-                <div class="vc-tags">
-                  <span class="tag">SPayLater</span>
-                </div>
-              </div>
-              <button class="vc-btn">Pakai</button>
+            <div class="f-grid-item">
+              <i class="fas fa-qrcode text-orange"></i>
+              <div class="badge-mini">0%</div>
+              <span>SPayLater Bayar QRIS</span>
             </div>
-            <!-- Item 3 -->
-            <div class="voucher-card">
-              <div class="vc-top">
-                <div class="vc-title">Bebas 1 Bulan Cicilan</div>
-                <div class="vc-tags">
-                  <span class="tag">SPayLater</span>
-                </div>
-              </div>
-              <button class="vc-btn">Pakai</button>
+            <div class="f-grid-item">
+              <i class="fas fa-desktop text-orange"></i>
+              <span>SPayLater Limit Xtra</span>
             </div>
-          </div>
-        </section>
-
-        <!-- New Insurance Section (Based on User Image) -->
-        <section class="insurance-section">
-            <div class="ins-header">
-                <h3>Asuransi yang disarankan</h3>
-                <span class="see-all">Lihat Semua ></span>
+            <div class="f-grid-item">
+              <i class="fas fa-shopping-bag text-teal"></i>
+              <span>Bayar Ecommerce</span>
             </div>
-            
-            <div class="ins-tabs">
-                <div class="ins-tab active">Kecelakaan</div>
-                <div class="ins-tab">Mobil</div>
-                <div class="ins-tab">Kesehatan</div>
-                <div class="ins-tab">Jiwa</div>
+            <div class="f-grid-item">
+              <i class="fas fa-mobile-alt text-blue"></i>
+              <span>Pulsa dan Tagihan</span>
             </div>
-
-            <!-- Card 1 -->
-            <div class="ins-card">
-                <div class="ins-badge">15% <br> OFF</div>
-                <div class="ins-card-content">
-                    <div class="ins-img">
-                         <!-- Placeholder for doctor image -->
-                         <i class="fas fa-user-md text-teal"></i>
-                    </div>
-                    <div class="ins-details">
-                        <div class="ins-title">MeLife Protection Accident</div>
-                        <div class="ins-price-row">
-                            <span class="label">Dari Rp20.400</span> <span class="original">Rp24.000</span>
-                        </div>
-                        <ul class="ins-features">
-                            <li>Perlindungan cedera yang tidak disengaja</li>
-                            <li>Klaim hingga Rp100JT</li>
-                            <li>Perlindungan langsung dari kecelakaan</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="ins-btn">Beli</button>
-                <div style="clear:both;"></div>
+            <div class="f-grid-item">
+              <i class="fas fa-gem text-yellow"></i>
+              <span>Emas</span>
             </div>
-
-            <!-- Card 2 -->
-            <div class="ins-card">
-                <div class="ins-badge">15% <br> OFF</div>
-                <div class="ins-card-content">
-                    <div class="ins-img">
-                         <!-- Placeholder for leg injury -->
-                         <i class="fas fa-crutch text-orange"></i>
-                    </div>
-                    <div class="ins-details">
-                        <div class="ins-title">Asuransi Kecelakaan Diri</div>
-                        <div class="ins-price-row">
-                            <span class="label">Dari Rp5.000</span>
-                        </div>
-                        <ul class="ins-features">
-                            <li>Melindungimu dari kejadian tak terduga</li>
-                            <li>Premi terjangkau mulai dari Rp5.000</li>
-                            <li>Klaim biaya pengobatan sampai Rp5JT</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="ins-btn">Beli</button>
-                <div style="clear:both;"></div>
+            <div class="f-grid-item">
+              <i class="fas fa-tachometer-alt text-orange"></i>
+              <span>Shopee Meter</span>
             </div>
-             <!-- Card 3 -->
-            <div class="ins-card">
-                 <div class="ins-badge" style="background:#ee4d2d;">100% <br> OFF</div>
-                <div class="ins-card-content">
-                    <div class="ins-img">
-                         <div class="badge-text" style="position: absolute; top:0; left:0; background: #ee4d2d; color:white; font-size:10px; padding:2px 5px; z-index: 2;">Gratis</div>
-                         <i class="fas fa-shield-alt text-blue"></i>
-                    </div>
-                    <div class="ins-details">
-                        <div class="ins-title">Asuransi Kecelakaan Diri Indosat...</div>
-                        <div class="ins-price-row">
-                            <span class="label">Rp0</span> <span class="original">Rp5.000</span>
-                        </div>
-                         <ul class="ins-features">
-                            <li>Proteksi Gratis selama 1 bulan</li>
-                            <li>Khusus pengguna Indosat</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="ins-btn">Ambil</button>
-                <div style="clear:both;"></div>
+            <div class="f-grid-item">
+              <i class="fas fa-shield-alt text-orange"></i>
+              <span>Asuransi</span>
             </div>
-
-        </section>
-      </div>
-      <!-- End Finance View -->
-
-      <!-- VIEW: SHOPEEFOOD -->
-      <div id="food-view" style="display: none;">
-          <!-- Custom Food Header -->
-          <div class="food-header">
-              <div class="fh-top">
-                  <div class="fh-loc">
-                      <span class="fh-label">Antar ke:</span>
-                      <div class="fh-address">
-                          <i class="fas fa-map-marker-alt"></i>
-                          <span>Gelora, TANAH ABANG, KOTA JAKARTA...</span>
-                          <i class="fas fa-chevron-right"></i>
-                      </div>
-                  </div>
-                  <i class="fas fa-shopping-cart text-white"></i>
-              </div>
-              <div class="fh-search">
-                  <i class="fas fa-search text-orange"></i>
-                  <input type="text" placeholder="Mie Gacoan">
-              </div>
-          </div>
-
-          <!-- Food Menu Slider -->
-          <div class="service-slider-container" style="margin-top: 10px; background: white; padding-bottom: 10px;">
-              <div class="service-slider" id="foodSlider">
-                  <section class="grid-page" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 15px;">
-                      <div class="service-item">
-                          <div class="icon-circle" style="background: white; border: 1px solid #eee;">
-                              <span style="font-weight:900; color:#ee4d2d; font-size:12px;">60%</span>
-                          </div>
-                          <span>Diskon Terus</span>
-                      </div>
-                      <div class="service-item">
-                          <div class="icon-circle" style="background: white; border: 1px solid #eee;">
-                              <i class="fas fa-map-marker-alt text-blue"></i>
-                          </div>
-                          <span>Sekitarmu</span>
-                      </div>
-                      <div class="service-item">
-                          <div class="icon-circle" style="background: white; border: 1px solid #eee;">
-                              <i class="fas fa-ticket-alt text-green"></i>
-                          </div>
-                          <span>Voucher</span>
-                      </div>
-                      <div class="service-item">
-                          <div class="icon-circle" style="background: white; border: 1px solid #eee;">
-                              <i class="fas fa-thumbs-up text-blue"></i>
-                          </div>
-                          <span>Foodies Pick</span>
-                      </div>
-                      <div class="service-item">
-                          <div class="icon-circle" style="background: white; border: 1px solid #eee;">
-                               <span style="font-weight:900; color:#ee4d2d; font-size:10px;">ONGKIR<br>1.0</span>
-                          </div>
-                          <span>Check Murah</span>
-                      </div>
-                  </section>
-              </div>
-              <!-- Dots -->
-              <div class="dots-indicator" id="foodDots">
-                  <span class="dot active" style="background: #ee4d2d;"></span>
-                  <span class="dot" style="background: #ddd;"></span>
-              </div>
-          </div>
-
-          <!-- Checkout Murah Section -->
-          <section class="food-section">
-              <div class="fs-sec-header">
-                  <div class="fs-left">
-                      <i class="fas fa-thumbs-up text-red"></i> 
-                      <span class="fs-title">CHECKOUT MURAH</span>
-                  </div>
-                  <span class="see-all">Lihat Semua ></span>
-              </div>
-              <div class="fs-sub-title">Semua Menu Harga Termasuk Ongkir</div>
-              
-              <div class="horizontal-scroll">
-                  <!-- Food Card 1 -->
-                  <div class="food-card">
-                      <div class="fc-img-box">
-                           <!-- Placeholder Food Image -->
-                           <i class="fas fa-drumstick-bite" style="font-size:30px; color:#ddd;"></i>
-                           <div class="fc-tag-pop">TERLARIS</div>
-                      </div>
-                      <div class="fc-name">Paket Komplit Nasi Ayam Spi...</div>
-                      <div class="fc-price">Rp21.300</div>
-                      <div class="fc-orig-price">Rp61.233</div>
-                  </div>
-                  <!-- Food Card 2 -->
-                   <div class="food-card">
-                      <div class="fc-img-box">
-                           <i class="fas fa-pizza-slice" style="font-size:30px; color:#ddd;"></i>
-                      </div>
-                      <div class="fc-name">Martabak Pizza Or...</div>
-                      <div class="fc-price">Rp13.900</div>
-                      <div class="fc-orig-price">Rp29.500</div>
-                  </div>
-                   <!-- Food Card 3 -->
-                   <div class="food-card">
-                      <div class="fc-img-box">
-                           <i class="fas fa-bread-slice" style="font-size:30px; color:#ddd;"></i>
-                      </div>
-                      <div class="fc-name">Roti Bakar Kacang Coklat</div>
-                      <div class="fc-price">Rp13.000</div>
-                      <div class="fc-orig-price">Rp25.500</div>
-                  </div>
-              </div>
           </section>
 
-          <!-- ShopeeFood Deals Section -->
-          <section class="food-section" style="background: #fff5f5;">
-               <div class="fs-sec-header">
-                  <div class="fs-left">
-                      <span class="fs-title text-orange">ShopeeFood <i class="fas fa-percent"></i> DEALS</span>
-                  </div>
-                  <span class="see-all">Lihat Semua ></span>
+          <!-- Page 2: New Investment Items -->
+          <section class="finance-grid grid-page" style="padding: 20px 15px !important; align-content: start;">
+            <div class="f-grid-item">
+              <div class="icon-circle" style="background:#fff; border:1px solid #ddd; width:35px; height:35px;">
+                <i class="fas fa-chart-line text-orange"></i>
+                <div class="badge-mini" style="top:15px; right:-5px; font-size:6px;">Rp</div>
               </div>
-              <div class="fs-sub-title">Voucher Menu Diskon s/d 70%</div>
-
-              <div class="horizontal-scroll">
-                  <!-- Deal Card 1 -->
-                  <div class="food-card deal-card">
-                       <div class="fc-img-box" style="height: 100px;">
-                           <div class="fc-badge-yellow">-68%</div>
-                           <i class="fas fa-utensils" style="font-size:30px; color:#ddd;"></i>
-                           <div class="fc-sold-count">100RB+ terjual</div>
-                       </div>
-                       <div class="fc-desc">Mie Gacoan - Jak...</div>
-                       <div class="fc-name-bold">Mie Gacoan</div>
-                       <div class="fc-price text-orange">Rp5.000</div>
-                       <div class="fc-orig-price">Rp15.500</div>
-                  </div>
-                  <!-- Deal Card 2 -->
-                   <div class="food-card deal-card">
-                       <div class="fc-img-box" style="height: 100px;">
-                           <div class="fc-badge-yellow">-79%</div>
-                           <i class="fas fa-hamburger" style="font-size:30px; color:#ddd;"></i>
-                           <div class="fc-sold-count">800+ terjual</div>
-                       </div>
-                       <div class="fc-desc">Ayam Bakar Kalas...</div>
-                       <div class="fc-name-bold">nasi goreng chicken katsu</div>
-                       <div class="fc-price text-orange">Rp12.500</div>
-                       <div class="fc-orig-price">Rp60.000</div>
-                  </div>
+              <span>Investasi Pintar</span>
+            </div>
+            <div class="f-grid-item">
+              <div class="icon-circle"
+                style="background: linear-gradient(to bottom, #ffcc80, #ffab91); width:35px; height:35px; border-radius:8px;">
+                <i class="fas fa-chart-area" style="color:white;"></i>
               </div>
+              <span>Reksa Dana</span>
+            </div>
+            <div class="f-grid-item" id="btn-shopeepay-goals">
+              <div class="icon-circle" style="background:#fff; border:1px solid #ddd; width:35px; height:35px;">
+                <i class="fas fa-bullseye text-orange"></i>
+              </div>
+              <span>ShopeePay Goals</span>
+            </div>
           </section>
+        </div>
       </div>
 
-      <!-- VIEW: PROFILE (SAYA) -->
-      <div id="profile-view" style="display: none; background: #f5f5f5; min-height: 100vh;">
-          <!-- Profile Header -->
-          <div class="profile-header" style="background: white; padding: 15px; padding-bottom: 20px;">
-              <div class="ph-top" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                  <div class="ph-merchant" style="display: flex; align-items: center; color: #ee4d2d; font-size: 13px; font-weight: 500;">
-                      <i class="fas fa-store" style="margin-right: 5px;"></i> Daftar sebagai Merchant >
-                  </div>
-                  <div class="notification-icon" style="color: black !important;">
-                        <i class="far fa-bell" style="color: black;"></i>
-                        <span class="badge">24</span>
-                  </div>
-              </div>
-              
-              <div class="ph-user" style="display: flex; align-items: center; gap: 15px;">
-                  <div class="ph-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #ddd; overflow: hidden;">
-                      <!-- Placeholder Avatar -->
-                      <img src="https://via.placeholder.com/50" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                  </div>
-                  <div class="ph-info">
-                      <div class="ph-name" style="font-weight: bold; font-size: 16px; margin-bottom: 2px;">
-                          moh_syarief9 <i class="fas fa-chevron-right" style="font-size: 12px; color: #999; margin-left: 5px;"></i>
-                      </div>
-                      <div class="ph-status" style="display: flex; align-items: center; gap: 10px;">
-                          <span style="border: 1px solid #ee4d2d; color: #ee4d2d; font-size: 10px; padding: 0 4px; border-radius: 2px; font-weight: bold;">PLUS</span>
-                          <span style="font-size: 12px; color: #666;">+62 8****05</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <!-- SPayLater Dashboard -->
-          <div class="ph-dashboard" style="background: white; margin-top: 10px; padding: 15px; margin: 0 15px; border-radius: 8px; transform: translateY(-10px); box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-              <div class="ph-banner" style="background: linear-gradient(90deg, #ff7e5f, #ee4d2d); border-radius: 6px; padding: 10px; display: flex; justify-content: space-between; align-items: center; color: white; margin-bottom: 15px;">
-                  <div style="font-size: 12px; font-weight: bold;">SPayLater Bonus 500RB</div>
-                  <button style="background: transparent; border: 1px solid white; color: white; font-size: 10px; padding: 2px 8px; border-radius: 4px;">Aktifkan</button>
-              </div>
-              <div class="ph-actions" style="display: flex; justify-content: space-between; text-align: center;">
-                  <div class="ph-action-item">
-                      <i class="fas fa-clipboard-list text-orange" style="font-size: 20px; margin-bottom: 5px;"></i>
-                      <div style="font-size: 11px; color: #666;">Riwayat</div>
-                  </div>
-                   <div class="ph-action-item">
-                      <i class="fas fa-file-invoice-dollar text-teal" style="font-size: 20px; margin-bottom: 5px;"></i>
-                      <div style="font-size: 11px; color: #666;">Tagihan Saya</div>
-                  </div>
-                   <div class="ph-action-item">
-                      <i class="fas fa-ticket-alt text-orange" style="font-size: 20px; margin-bottom: 5px;"></i>
-                      <div style="font-size: 11px; color: #666;">Voucher Saya</div>
-                  </div>
-              </div>
-          </div>
-
-          <!-- Menu Group 1 -->
-          <div class="menu-group" style="background: white; margin: 10px 0;">
-               <div class="menu-item">
-                   <div class="mi-left"><i class="fas fa-wallet"></i> Metode Pembayaran</div>
-                   <i class="fas fa-chevron-right"></i>
-               </div>
-          </div>
-
-          <div class="menu-group" style="background: white; margin: 10px 0;">
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-shield-alt"></i> Akun dan Keamanan</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-qrcode"></i> QR Saya</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item">
-                   <div class="mi-left"><i class="fas fa-gift"></i> Koin Saya</div> 
-                   <span class="mi-right-text">Klaim s/d 50RB koin <i class="fas fa-chevron-right"></i></span>
-               </div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-user-friends"></i> Undang Teman</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-link"></i> Aplikasi / Layanan Saya</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-tachometer-alt"></i> Shopee Meter</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item">
-                   <div class="mi-left"><i class="fas fa-shield-alt"></i> Asuransi Saya</div>
-                   <span class="mi-right-text">Ambil Asuransi Gratis <i class="fas fa-chevron-right"></i></span>
-                </div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-suitcase"></i> Perjalanan Saya</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-fingerprint"></i> Verifikasi</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-university"></i> Hubungkan BI-Fast</div> <i class="fas fa-chevron-right"></i></div>
-          </div>
-
-          <!-- Menu Group 2 -->
-          <div class="menu-group" style="background: white; margin: 10px 0; margin-bottom: 30px;">
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-cog"></i> Pengaturan Sistem</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-info-circle"></i> Tentang ShopeePay</div> <i class="fas fa-chevron-right"></i></div>
-               <div class="menu-item"><div class="mi-left"><i class="fas fa-question-circle"></i> Pusat Bantuan</div> <i class="fas fa-chevron-right"></i></div>
-          </div>
-          
-          <!-- Footer Logo -->
-          <div class="ph-footer" style="text-align: center; padding-bottom: 40px; color: #999;">
-              <div style="font-size: 10px; margin-bottom: 5px;">ShopeePay telah berizin dan diawasi oleh:</div>
-              <div style="display: flex; justify-content: center; align-items: center; gap: 5px; font-weight: bold; font-size: 14px; opacity: 0.5;">
-                  <i class="fas fa-university" style="font-size: 20px;"></i> BANK INDONESIA
-              </div>
-              <div style="font-size: 8px; opacity: 0.5;">BANK SENTRAL REPUBLIK INDONESIA</div>
-          </div>
-
+      <!-- Dots for Finance Slider -->
+      <div class="dots-indicator" id="financeDots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
       </div>
 
-      <!-- Bottom Navigation -->
-      <nav class="bottom-nav">
-        <div class="nav-item active">
-          <i class="fas fa-home"></i>
-          <span>Beranda</span>
+      <!-- Insurance Promo -->
+      <section class="insurance-promo">
+        <div class="ins-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="ins-text">
+          <div class="ins-title">Asuransi</div>
+          <div class="ins-sub">GRATIS proteksi kecelakaan Rp1JT</div>
         </div>
-        <div class="nav-item">
-          <i class="fas fa-hand-holding-usd"></i>
-          <span>Keuangan</span>
+        <i class="fas fa-chevron-right"></i>
+      </section>
+
+      <!-- Voucher Produk List -->
+      <section class="voucher-list">
+        <div class="section-title">
+          <span>Voucher Produk</span>
+          <span class="see-all">Lihat Semua ></span>
         </div>
-        <div class="nav-item qris-container">
-          <div class="qris-btn">
-            <i class="fas fa-qrcode"></i>
+        <div class="horizontal-scroll">
+          <!-- Item 1 -->
+          <div class="voucher-card">
+            <div class="vc-top">
+              <div class="vc-title">Bunga Cicilan 0%</div>
+              <div class="vc-tags">
+                <span class="tag">SPayLater</span>
+                <span class="tag">Di Toko</span>
+              </div>
+            </div>
+            <button class="vc-btn">Pakai</button>
           </div>
-          <span>QRIS</span>
+          <!-- Item 2 -->
+          <div class="voucher-card">
+            <div class="vc-top">
+              <div class="vc-title">Bunga Cicilan 0%</div>
+              <div class="vc-tags">
+                <span class="tag">SPayLater</span>
+              </div>
+            </div>
+            <button class="vc-btn">Pakai</button>
+          </div>
+          <!-- Item 3 -->
+          <div class="voucher-card">
+            <div class="vc-top">
+              <div class="vc-title">Bebas 1 Bulan Cicilan</div>
+              <div class="vc-tags">
+                <span class="tag">SPayLater</span>
+              </div>
+            </div>
+            <button class="vc-btn">Pakai</button>
+          </div>
         </div>
-        <div class="nav-item">
-          <i class="fas fa-utensils"></i>
-          <span>ShopeeFood</span>
+      </section>
+
+      <!-- New Insurance Section (Based on User Image) -->
+      <section class="insurance-section">
+        <div class="ins-header">
+          <h3>Asuransi yang disarankan</h3>
+          <span class="see-all">Lihat Semua ></span>
         </div>
-        <div class="nav-item">
-          <i class="far fa-user"></i>
-          <span>Saya</span>
+
+        <div class="ins-tabs">
+          <div class="ins-tab active">Kecelakaan</div>
+          <div class="ins-tab">Mobil</div>
+          <div class="ins-tab">Kesehatan</div>
+          <div class="ins-tab">Jiwa</div>
         </div>
-      </nav>
+
+        <!-- Card 1 -->
+        <div class="ins-card">
+          <div class="ins-badge">15% <br> OFF</div>
+          <div class="ins-card-content">
+            <div class="ins-img">
+              <!-- Placeholder for doctor image -->
+              <i class="fas fa-user-md text-teal"></i>
+            </div>
+            <div class="ins-details">
+              <div class="ins-title">MeLife Protection Accident</div>
+              <div class="ins-price-row">
+                <span class="label">Dari Rp20.400</span> <span class="original">Rp24.000</span>
+              </div>
+              <ul class="ins-features">
+                <li>Perlindungan cedera yang tidak disengaja</li>
+                <li>Klaim hingga Rp100JT</li>
+                <li>Perlindungan langsung dari kecelakaan</li>
+              </ul>
+            </div>
+          </div>
+          <button class="ins-btn">Beli</button>
+          <div style="clear:both;"></div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ins-card">
+          <div class="ins-badge">15% <br> OFF</div>
+          <div class="ins-card-content">
+            <div class="ins-img">
+              <!-- Placeholder for leg injury -->
+              <i class="fas fa-crutch text-orange"></i>
+            </div>
+            <div class="ins-details">
+              <div class="ins-title">Asuransi Kecelakaan Diri</div>
+              <div class="ins-price-row">
+                <span class="label">Dari Rp5.000</span>
+              </div>
+              <ul class="ins-features">
+                <li>Melindungimu dari kejadian tak terduga</li>
+                <li>Premi terjangkau mulai dari Rp5.000</li>
+                <li>Klaim biaya pengobatan sampai Rp5JT</li>
+              </ul>
+            </div>
+          </div>
+          <button class="ins-btn">Beli</button>
+          <div style="clear:both;"></div>
+        </div>
+        <!-- Card 3 -->
+        <div class="ins-card">
+          <div class="ins-badge" style="background:#ee4d2d;">100% <br> OFF</div>
+          <div class="ins-card-content">
+            <div class="ins-img">
+              <div class="badge-text"
+                style="position: absolute; top:0; left:0; background: #ee4d2d; color:white; font-size:10px; padding:2px 5px; z-index: 2;">
+                Gratis</div>
+              <i class="fas fa-shield-alt text-blue"></i>
+            </div>
+            <div class="ins-details">
+              <div class="ins-title">Asuransi Kecelakaan Diri Indosat...</div>
+              <div class="ins-price-row">
+                <span class="label">Rp0</span> <span class="original">Rp5.000</span>
+              </div>
+              <ul class="ins-features">
+                <li>Proteksi Gratis selama 1 bulan</li>
+                <li>Khusus pengguna Indosat</li>
+              </ul>
+            </div>
+          </div>
+          <button class="ins-btn">Ambil</button>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+    </div>
+    <!-- End Finance View -->
+
+    <!-- VIEW: SHOPEEFOOD -->
+    <div id="food-view" style="display: none;">
+      <!-- Custom Food Header -->
+      <div class="food-header">
+        <div class="fh-top">
+          <div class="fh-loc">
+            <span class="fh-label">Antar ke:</span>
+            <div class="fh-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Gelora, TANAH ABANG, KOTA JAKARTA...</span>
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+          <i class="fas fa-shopping-cart text-white"></i>
+        </div>
+        <div class="fh-search">
+          <i class="fas fa-search text-orange"></i>
+          <input type="text" placeholder="Mie Gacoan">
+        </div>
+      </div>
+
+      <!-- Food Menu Slider -->
+      <div class="service-slider-container" style="margin-top: 10px; background: white; padding-bottom: 10px;">
+        <div class="service-slider" id="foodSlider">
+          <section class="grid-page"
+            style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 15px;">
+            <div class="service-item">
+              <div class="icon-circle" style="background: white; border: 1px solid #eee;">
+                <span style="font-weight:900; color:#ee4d2d; font-size:12px;">60%</span>
+              </div>
+              <span>Diskon Terus</span>
+            </div>
+            <div class="service-item">
+              <div class="icon-circle" style="background: white; border: 1px solid #eee;">
+                <i class="fas fa-map-marker-alt text-blue"></i>
+              </div>
+              <span>Sekitarmu</span>
+            </div>
+            <div class="service-item">
+              <div class="icon-circle" style="background: white; border: 1px solid #eee;">
+                <i class="fas fa-ticket-alt text-green"></i>
+              </div>
+              <span>Voucher</span>
+            </div>
+            <div class="service-item">
+              <div class="icon-circle" style="background: white; border: 1px solid #eee;">
+                <i class="fas fa-thumbs-up text-blue"></i>
+              </div>
+              <span>Foodies Pick</span>
+            </div>
+            <div class="service-item">
+              <div class="icon-circle" style="background: white; border: 1px solid #eee;">
+                <span style="font-weight:900; color:#ee4d2d; font-size:10px;">ONGKIR<br>1.0</span>
+              </div>
+              <span>Check Murah</span>
+            </div>
+          </section>
+        </div>
+        <!-- Dots -->
+        <div class="dots-indicator" id="foodDots">
+          <span class="dot active" style="background: #ee4d2d;"></span>
+          <span class="dot" style="background: #ddd;"></span>
+        </div>
+      </div>
+
+      <!-- Checkout Murah Section -->
+      <section class="food-section">
+        <div class="fs-sec-header">
+          <div class="fs-left">
+            <i class="fas fa-thumbs-up text-red"></i>
+            <span class="fs-title">CHECKOUT MURAH</span>
+          </div>
+          <span class="see-all">Lihat Semua ></span>
+        </div>
+        <div class="fs-sub-title">Semua Menu Harga Termasuk Ongkir</div>
+
+        <div class="horizontal-scroll">
+          <!-- Food Card 1 -->
+          <div class="food-card">
+            <div class="fc-img-box">
+              <!-- Placeholder Food Image -->
+              <i class="fas fa-drumstick-bite" style="font-size:30px; color:#ddd;"></i>
+              <div class="fc-tag-pop">TERLARIS</div>
+            </div>
+            <div class="fc-name">Paket Komplit Nasi Ayam Spi...</div>
+            <div class="fc-price">Rp21.300</div>
+            <div class="fc-orig-price">Rp61.233</div>
+          </div>
+          <!-- Food Card 2 -->
+          <div class="food-card">
+            <div class="fc-img-box">
+              <i class="fas fa-pizza-slice" style="font-size:30px; color:#ddd;"></i>
+            </div>
+            <div class="fc-name">Martabak Pizza Or...</div>
+            <div class="fc-price">Rp13.900</div>
+            <div class="fc-orig-price">Rp29.500</div>
+          </div>
+          <!-- Food Card 3 -->
+          <div class="food-card">
+            <div class="fc-img-box">
+              <i class="fas fa-bread-slice" style="font-size:30px; color:#ddd;"></i>
+            </div>
+            <div class="fc-name">Roti Bakar Kacang Coklat</div>
+            <div class="fc-price">Rp13.000</div>
+            <div class="fc-orig-price">Rp25.500</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ShopeeFood Deals Section -->
+      <section class="food-section" style="background: #fff5f5;">
+        <div class="fs-sec-header">
+          <div class="fs-left">
+            <span class="fs-title text-orange">ShopeeFood <i class="fas fa-percent"></i> DEALS</span>
+          </div>
+          <span class="see-all">Lihat Semua ></span>
+        </div>
+        <div class="fs-sub-title">Voucher Menu Diskon s/d 70%</div>
+
+        <div class="horizontal-scroll">
+          <!-- Deal Card 1 -->
+          <div class="food-card deal-card">
+            <div class="fc-img-box" style="height: 100px;">
+              <div class="fc-badge-yellow">-68%</div>
+              <i class="fas fa-utensils" style="font-size:30px; color:#ddd;"></i>
+              <div class="fc-sold-count">100RB+ terjual</div>
+            </div>
+            <div class="fc-desc">Mie Gacoan - Jak...</div>
+            <div class="fc-name-bold">Mie Gacoan</div>
+            <div class="fc-price text-orange">Rp5.000</div>
+            <div class="fc-orig-price">Rp15.500</div>
+          </div>
+          <!-- Deal Card 2 -->
+          <div class="food-card deal-card">
+            <div class="fc-img-box" style="height: 100px;">
+              <div class="fc-badge-yellow">-79%</div>
+              <i class="fas fa-hamburger" style="font-size:30px; color:#ddd;"></i>
+              <div class="fc-sold-count">800+ terjual</div>
+            </div>
+            <div class="fc-desc">Ayam Bakar Kalas...</div>
+            <div class="fc-name-bold">nasi goreng chicken katsu</div>
+            <div class="fc-price text-orange">Rp12.500</div>
+            <div class="fc-orig-price">Rp60.000</div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- VIEW: PROFILE (SAYA) -->
+    <div id="profile-view" style="display: none; background: #f5f5f5; min-height: 100vh;">
+      <!-- Profile Header -->
+      <div class="profile-header" style="background: white; padding: 15px; padding-bottom: 20px;">
+        <div class="ph-top"
+          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <div class="ph-merchant"
+            style="display: flex; align-items: center; color: #ee4d2d; font-size: 13px; font-weight: 500;">
+            <i class="fas fa-store" style="margin-right: 5px;"></i> Daftar sebagai Merchant >
+          </div>
+          <div class="notification-icon" style="color: black !important;">
+            <i class="far fa-bell" style="color: black;"></i>
+            <span class="badge">24</span>
+          </div>
+        </div>
+
+        <div class="ph-user" style="display: flex; align-items: center; gap: 15px;">
+          <div class="ph-avatar"
+            style="width: 50px; height: 50px; border-radius: 50%; background: #ddd; overflow: hidden;">
+            <!-- Placeholder Avatar -->
+            <img src="https://via.placeholder.com/50" alt="Avatar"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="ph-info">
+            <div class="ph-name" style="font-weight: bold; font-size: 16px; margin-bottom: 2px;">
+              moh_syarief9 <i class="fas fa-chevron-right" style="font-size: 12px; color: #999; margin-left: 5px;"></i>
+            </div>
+            <div class="ph-status" style="display: flex; align-items: center; gap: 10px;">
+              <span
+                style="border: 1px solid #ee4d2d; color: #ee4d2d; font-size: 10px; padding: 0 4px; border-radius: 2px; font-weight: bold;">PLUS</span>
+              <span style="font-size: 12px; color: #666;">+62 8****05</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPayLater Dashboard -->
+      <div class="ph-dashboard"
+        style="background: white; margin-top: 10px; padding: 15px; margin: 0 15px; border-radius: 8px; transform: translateY(-10px); box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <div class="ph-banner"
+          style="background: linear-gradient(90deg, #ff7e5f, #ee4d2d); border-radius: 6px; padding: 10px; display: flex; justify-content: space-between; align-items: center; color: white; margin-bottom: 15px;">
+          <div style="font-size: 12px; font-weight: bold;">SPayLater Bonus 500RB</div>
+          <button
+            style="background: transparent; border: 1px solid white; color: white; font-size: 10px; padding: 2px 8px; border-radius: 4px;">Aktifkan</button>
+        </div>
+        <div class="ph-actions" style="display: flex; justify-content: space-between; text-align: center;">
+          <div class="ph-action-item">
+            <i class="fas fa-clipboard-list text-orange" style="font-size: 20px; margin-bottom: 5px;"></i>
+            <div style="font-size: 11px; color: #666;">Riwayat</div>
+          </div>
+          <div class="ph-action-item">
+            <i class="fas fa-file-invoice-dollar text-teal" style="font-size: 20px; margin-bottom: 5px;"></i>
+            <div style="font-size: 11px; color: #666;">Tagihan Saya</div>
+          </div>
+          <div class="ph-action-item">
+            <i class="fas fa-ticket-alt text-orange" style="font-size: 20px; margin-bottom: 5px;"></i>
+            <div style="font-size: 11px; color: #666;">Voucher Saya</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Group 1 -->
+      <div class="menu-group" style="background: white; margin: 10px 0;">
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-wallet"></i> Metode Pembayaran</div>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <div class="menu-group" style="background: white; margin: 10px 0;">
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-shield-alt"></i> Akun dan Keamanan</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-qrcode"></i> QR Saya</div> <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-gift"></i> Koin Saya</div>
+          <span class="mi-right-text">Klaim s/d 50RB koin <i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-user-friends"></i> Undang Teman</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-link"></i> Aplikasi / Layanan Saya</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-tachometer-alt"></i> Shopee Meter</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-shield-alt"></i> Asuransi Saya</div>
+          <span class="mi-right-text">Ambil Asuransi Gratis <i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-suitcase"></i> Perjalanan Saya</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-fingerprint"></i> Verifikasi</div> <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-university"></i> Hubungkan BI-Fast</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Menu Group 2 -->
+      <div class="menu-group" style="background: white; margin: 10px 0; margin-bottom: 30px;">
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-cog"></i> Pengaturan Sistem</div> <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-info-circle"></i> Tentang ShopeePay</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+        <div class="menu-item">
+          <div class="mi-left"><i class="fas fa-question-circle"></i> Pusat Bantuan</div> <i
+            class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Footer Logo -->
+      <div class="ph-footer" style="text-align: center; padding-bottom: 40px; color: #999;">
+        <div style="font-size: 10px; margin-bottom: 5px;">ShopeePay telah berizin dan diawasi oleh:</div>
+        <div
+          style="display: flex; justify-content: center; align-items: center; gap: 5px; font-weight: bold; font-size: 14px; opacity: 0.5;">
+          <i class="fas fa-university" style="font-size: 20px;"></i> BANK INDONESIA
+        </div>
+        <div style="font-size: 8px; opacity: 0.5;">BANK SENTRAL REPUBLIK INDONESIA</div>
+      </div>
+
+    </div>
+
+    <!-- VIEW: SHOPEEPAY GOALS -->
+    <div id="shopeepay-view" style="display: none; background: #fff; min-height: 100vh;">
+      <div class="sp-goals-header sp-header-white"
+        style="display: flex; align-items: center; padding: 15px; position: sticky; top: 0; z-index: 100;">
+        <i class="fas fa-arrow-left" id="btn-back-shopeepay" style="font-size: 18px; margin-right: 15px;"></i>
+        <h2 style="font-size: 18px; margin: 0; font-weight: bold;">ShopeePay Goals</h2>
+      </div>
+
+      <div class="sp-goals-container">
+        <!-- Hero Illustration -->
+        <div class="sp-goals-hero">
+          <div class="hero-illustration">
+            <i class="fas fa-umbrella-beach"></i>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="sp-goals-text">
+          <h3>Semua impian bakal jadi kenyataan</h3>
+          <p>Dari liburan sampai belanja gadget idaman, atur dan wujudkan semuanya dengan ShopeePay Goals!</p>
+        </div>
+
+        <!-- Feature Cards (Horizontal Scroll) -->
+        <div class="sp-features-scroll">
+          <!-- Feature 1 -->
+          <div class="sp-feature-card">
+            <div class="sp-f-icon">
+              <i class="fas fa-calendar-check text-orange"></i>
+            </div>
+            <div class="sp-f-title">Bebas biaya admin</div>
+            <div class="sp-f-desc">Pakai sesukamu, semua bebas biaya admin.</div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="sp-feature-card">
+            <div class="sp-f-icon">
+              <i class="fas fa-coins text-yellow"></i>
+            </div>
+            <div class="sp-f-title">Tanpa jumlah minimum</div>
+            <div class="sp-f-desc">Mulai dengan berapapun jumlah yang kamu mau.</div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="sp-feature-card">
+            <div class="sp-f-icon">
+              <i class="fas fa-tachometer-alt text-orange"></i>
+            </div>
+            <div class="sp-f-title">Tarik aja kapanpun</div>
+            <div class="sp-f-desc">Tarik saldomu kapan saja dengan mudah.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Button -->
+      <div class="sp-bottom-btn-container">
+        <button class="sp-btn-primary">BUAT IMPIAN BARU</button>
+      </div>
+    </div>
+
+    <!-- VIEW: CREATE GOAL -->
+    <div id="create-goal-view" style="display: none; background: #fff; min-height: 100vh; padding-bottom: 80px;">
+      <div class="sp-goals-header sp-header-white"
+        style="display: flex; align-items: center; padding: 15px; position: sticky; top: 0; z-index: 100;">
+        <i class="fas fa-arrow-left" id="btn-back-create-goal" style="font-size: 18px; margin-right: 15px;"></i>
+        <h2 style="font-size: 18px; margin: 0; font-weight: bold;">Buat Impian Baru</h2>
+      </div>
+
+      <div class="create-goal-content">
+        <!-- Categories -->
+        <div class="cg-section">
+          <label class="cg-label">Jenis Impian</label>
+          <div class="cg-categories-scroll">
+            <div class="cg-cat-item active">
+              <div class="cg-cat-icon">
+                <i class="fas fa-piggy-bank"></i>
+              </div>
+              <span>Kasual</span>
+            </div>
+            <div class="cg-cat-item">
+              <div class="cg-cat-icon">
+                <i class="fas fa-suitcase-rolling"></i>
+              </div>
+              <span>Travel</span>
+            </div>
+            <div class="cg-cat-item">
+              <div class="cg-cat-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <span>Gadget</span>
+            </div>
+            <div class="cg-cat-item">
+              <div class="cg-cat-icon">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <span>Fashion</span>
+            </div>
+            <div class="cg-cat-item">
+              <div class="cg-cat-icon">
+                <i class="fas fa-tv"></i>
+              </div>
+              <span>Elektronik</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider-thick"></div>
+
+        <!-- Form -->
+        <div class="cg-section">
+          <div class="sp-input-group">
+            <label>Nama Impian</label>
+            <input type="text" placeholder="Tulis impianmu di sini" class="sp-input">
+          </div>
+
+          <div class="sp-input-group">
+            <label>Jumlah Target</label>
+            <input type="number" placeholder="Rp0" class="sp-input">
+            <span class="helper-text">Jumlah maksimal target Rp16.000.000. <i class="far fa-question-circle"></i></span>
+          </div>
+        </div>
+
+        <!-- Accelerator Card -->
+        <div class="cg-section">
+          <div class="accelerator-card">
+            <div class="acc-left">
+              <i class="fas fa-rocket text-blue"></i>
+              <div class="acc-text">
+                <div class="acc-title">Pakai Percepat Impian <i class="far fa-question-circle"></i></div>
+                <div class="acc-desc">Impian bisa nambah tiap hari!</div>
+              </div>
+            </div>
+            <div class="acc-toggle">
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Button -->
+      <div class="sp-bottom-btn-container">
+        <button class="sp-btn-disabled">BUAT IMPIAN</button>
+      </div>
+    </div>
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <div class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Beranda</span>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>Keuangan</span>
+      </div>
+      <div class="nav-item qris-container">
+        <div class="qris-btn">
+          <i class="fas fa-qrcode"></i>
+        </div>
+        <span>QRIS</span>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-utensils"></i>
+        <span>ShopeeFood</span>
+      </div>
+      <div class="nav-item">
+        <i class="far fa-user"></i>
+        <span>Saya</span>
+      </div>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

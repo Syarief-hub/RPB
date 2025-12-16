@@ -191,4 +191,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize Food Slider (Dots)
   initSlider("foodSlider", "#foodDots", "dots");
+
+  // SHOPEEPAY GOALS NAVIGATION
+  const btnShopeePayGoals = document.getElementById("btn-shopeepay-goals");
+  const shopeePayView = document.getElementById("shopeepay-view");
+  const btnBackShopeePay = document.getElementById("btn-back-shopeepay");
+  const bottomNav = document.querySelector(".bottom-nav");
+
+  if (btnShopeePayGoals) {
+    btnShopeePayGoals.addEventListener("click", () => {
+      // Hide other views
+      if (financeView) financeView.style.display = "none";
+      if (homeView) homeView.style.display = "none";
+      if (mainHeader) mainHeader.style.display = "none";
+      if (bottomNav) bottomNav.style.display = "none"; // Hide bottom nav
+
+      // Show ShopeePay View
+      if (shopeePayView) {
+        shopeePayView.style.display = "block";
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  if (btnBackShopeePay) {
+    btnBackShopeePay.addEventListener("click", () => {
+      // Hide ShopeePay View
+      if (shopeePayView) shopeePayView.style.display = "none";
+
+      // Show Finance View (Parent)
+      if (financeView) {
+        financeView.style.display = "block";
+        if (mainHeader) {
+          mainHeader.style.display = "block";
+          // Ensure header is in finance mode
+          mainHeader.classList.add("header-finance");
+          mainHeader.innerHTML = financeHeaderHTML;
+        }
+        if (bottomNav) bottomNav.style.display = "flex"; // Restore bottom nav
+      }
+    });
+  }
+
+  // CREATE GOAL NAVIGATION
+  const btnCreateGoal = document.querySelector(".sp-btn-primary"); // "BUAT IMPIAN BARU" button
+  const createGoalView = document.getElementById("create-goal-view");
+  const btnBackCreateGoal = document.getElementById("btn-back-create-goal");
+
+  if (btnCreateGoal) {
+    btnCreateGoal.addEventListener("click", () => {
+      if (shopeePayView) shopeePayView.style.display = "none";
+      if (createGoalView) {
+        createGoalView.style.display = "block";
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  if (btnBackCreateGoal) {
+    btnBackCreateGoal.addEventListener("click", () => {
+      if (createGoalView) createGoalView.style.display = "none";
+      if (shopeePayView) {
+        shopeePayView.style.display = "block";
+        // Ensure button container is visible if it was hidden (though it's part of the view)
+      }
+    });
+  }
+
+  // Category Selection Logic
+  const catItems = document.querySelectorAll(".cg-cat-item");
+  catItems.forEach(item => {
+    item.addEventListener("click", function () {
+      // Remove active from all
+      catItems.forEach(cat => cat.classList.remove("active"));
+      // Add active to clicked
+      this.classList.add("active");
+    });
+  });
 });
