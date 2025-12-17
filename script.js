@@ -192,72 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Food Slider (Dots)
   initSlider("foodSlider", "#foodDots", "dots");
 
-  // SHOPEEPAY GOALS NAVIGATION
-  const btnShopeePayGoals = document.getElementById("btn-shopeepay-goals");
-  const shopeePayView = document.getElementById("shopeepay-view");
-  const btnBackShopeePay = document.getElementById("btn-back-shopeepay");
-  const bottomNav = document.querySelector(".bottom-nav");
-
-  if (btnShopeePayGoals) {
-    btnShopeePayGoals.addEventListener("click", () => {
-      // Hide other views
-      if (financeView) financeView.style.display = "none";
-      if (homeView) homeView.style.display = "none";
-      if (mainHeader) mainHeader.style.display = "none";
-      if (bottomNav) bottomNav.style.display = "none"; // Hide bottom nav
-
-      // Show ShopeePay View
-      if (shopeePayView) {
-        shopeePayView.style.display = "block";
-        window.scrollTo(0, 0);
-      }
-    });
-  }
-
-  if (btnBackShopeePay) {
-    btnBackShopeePay.addEventListener("click", () => {
-      // Hide ShopeePay View
-      if (shopeePayView) shopeePayView.style.display = "none";
-
-      // Show Finance View (Parent)
-      if (financeView) {
-        financeView.style.display = "block";
-        if (mainHeader) {
-          mainHeader.style.display = "block";
-          // Ensure header is in finance mode
-          mainHeader.classList.add("header-finance");
-          mainHeader.innerHTML = financeHeaderHTML;
-        }
-        if (bottomNav) bottomNav.style.display = "flex"; // Restore bottom nav
-      }
-    });
-  }
-
-  // CREATE GOAL NAVIGATION
-  const btnCreateGoal = document.querySelector(".sp-btn-primary"); // "BUAT IMPIAN BARU" button
-  const createGoalView = document.getElementById("create-goal-view");
-  const btnBackCreateGoal = document.getElementById("btn-back-create-goal");
-
-  if (btnCreateGoal) {
-    btnCreateGoal.addEventListener("click", () => {
-      if (shopeePayView) shopeePayView.style.display = "none";
-      if (createGoalView) {
-        createGoalView.style.display = "block";
-        window.scrollTo(0, 0);
-      }
-    });
-  }
-
-  if (btnBackCreateGoal) {
-    btnBackCreateGoal.addEventListener("click", () => {
-      if (createGoalView) createGoalView.style.display = "none";
-      if (shopeePayView) {
-        shopeePayView.style.display = "block";
-        // Ensure button container is visible if it was hidden (though it's part of the view)
-      }
-    });
-  }
-
   // Category Selection Logic
   const catItems = document.querySelectorAll(".cg-cat-item");
   catItems.forEach((item) => {
@@ -540,10 +474,155 @@ document.addEventListener("DOMContentLoaded", () => {
     sw.addEventListener("change", function () {
       const slider = this.nextElementSibling;
       if (this.checked) {
-        slider.style.backgroundColor = "#2196f3";
+        slider.style.backgroundColor = "#26aa99";
       } else {
         slider.style.backgroundColor = "#ccc";
       }
     });
   });
+  // OWNER DETAIL NAVIGATION
+  const ownerDetailBtns = document.querySelectorAll(".owner-detail-btn");
+  const ownerDetailView = document.getElementById("owner-detail-view");
+  const btnBackOwnerDetail = document.getElementById("btn-back-owner-detail");
+
+  if (ownerDetailBtns) {
+    ownerDetailBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        // Prevent bubbling
+        e.stopPropagation();
+
+        if (familyWaletView) familyWaletView.style.display = "none";
+        if (ownerDetailView) {
+          ownerDetailView.style.display = "block";
+          window.scrollTo(0, 0);
+        }
+      });
+    });
+  }
+
+  if (btnBackOwnerDetail) {
+    btnBackOwnerDetail.addEventListener("click", () => {
+      if (ownerDetailView) ownerDetailView.style.display = "none";
+      if (familyWaletView) familyWaletView.style.display = "block";
+    });
+  }
+  // ADD MEMBER NAVIGATION (Updated)
+  const btnAddMember = document.getElementById("btn-add-member");
+
+  if (btnAddMember) {
+    btnAddMember.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const fView = document.getElementById("family-walet-view");
+      const aView = document.getElementById("add-member-view");
+
+      if (fView) fView.style.display = "none";
+      if (aView) {
+        aView.style.display = "block";
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  const btnBackAddMember = document.getElementById("btn-back-add-member");
+  if (btnBackAddMember) {
+    btnBackAddMember.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const fView = document.getElementById("family-walet-view");
+      const aView = document.getElementById("add-member-view");
+
+      if (aView) aView.style.display = "none";
+      if (fView) fView.style.display = "block";
+    });
+  }
+
+  // CREATE GOAL LOGIC
+  const goalNameInput = document.getElementById("goal-name-input");
+  const goalAmountInput = document.getElementById("goal-amount-input");
+  const btnSubmitGoal = document.getElementById("btn-submit-goal");
+
+  function validateGoalForm() {
+    // console.log("Validating: ", goalNameInput.value, goalAmountInput.value);
+    if (
+      goalNameInput.value.trim() !== "" &&
+      goalAmountInput.value.trim() !== ""
+    ) {
+      btnSubmitGoal.style.background = "#ee4d2d";
+      btnSubmitGoal.style.cursor = "pointer";
+      btnSubmitGoal.dataset.ready = "true"; // Use data attribute instead of disabled property
+    } else {
+      btnSubmitGoal.style.background = "#ccc";
+      btnSubmitGoal.style.cursor = "default";
+      btnSubmitGoal.dataset.ready = "false";
+    }
+  }
+
+  if (goalNameInput && goalAmountInput) {
+    goalNameInput.addEventListener("input", validateGoalForm);
+    goalAmountInput.addEventListener("input", validateGoalForm);
+    // Run once on load to set initial state
+    validateGoalForm();
+  } else {
+    console.error("Inputs not found!");
+  }
+
+  if (btnSubmitGoal) {
+    btnSubmitGoal.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      try {
+        // console.log("Button clicked!");
+
+        const nameVal = goalNameInput ? goalNameInput.value.trim() : "";
+        const amountVal = goalAmountInput ? goalAmountInput.value.trim() : "";
+
+        // Direct check (failsafe)
+        if (nameVal === "" || amountVal === "") {
+          alert("Mohon isi Nama Impian dan Jumlah Target!");
+          return;
+        }
+
+        // 1. Format Amount
+        const numericAmount =
+          parseInt(amountVal.replace(/\./g, "").replace(/,/g, "")) || 0;
+        const formattedAmount = numericAmount.toLocaleString("id-ID");
+
+        // 2. Update UI
+        // Find the goal name element using a more generic selector if specific one fails
+        const goalNameEl = document.querySelector(
+          "#shopeepay-view .fas.fa-desktop"
+        )?.parentNode?.nextElementSibling;
+        if (goalNameEl) {
+          goalNameEl.innerText = nameVal;
+        }
+
+        // Update Total Balance
+        // Look for the element containing "Rp" in the header
+        const balanceEls = document.querySelectorAll("#shopeepay-view div");
+        for (let div of balanceEls) {
+          if (div.innerText.includes("Rp") && div.style.fontSize === "24px") {
+            div.innerText = "Rp " + formattedAmount;
+            break;
+          }
+        }
+
+        // 3. Switch View
+        const createView = document.getElementById("create-goal-view");
+        const dashboardView = document.getElementById("shopeepay-view");
+
+        if (createView) createView.style.display = "none";
+        if (dashboardView) {
+          dashboardView.style.display = "block";
+          window.scrollTo(0, 0);
+        } else {
+          alert("Error: Dashboard view not found!");
+        }
+      } catch (err) {
+        alert("Terjadi kesalahan: " + err.message);
+        console.error(err);
+      }
+    });
+  }
 });
