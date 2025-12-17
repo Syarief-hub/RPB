@@ -210,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (shopeePayView) {
         shopeePayView.style.display = "block";
         window.scrollTo(0, 0);
+        renderGoals();
       }
     });
   }
@@ -233,17 +234,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CREATE GOAL NAVIGATION
-  const btnCreateGoal = document.querySelector(".sp-btn-primary"); // "BUAT IMPIAN BARU" button
+  // CREATE GOAL NAVIGATION & LOGIC
+  const btnCreateGoalNav = document.getElementById("btn-create-goal-nav"); // Navigation button
   const createGoalView = document.getElementById("create-goal-view");
   const btnBackCreateGoal = document.getElementById("btn-back-create-goal");
 
-  if (btnCreateGoal) {
-    btnCreateGoal.addEventListener("click", () => {
+  // Inputs
+  const goalNameInput = document.getElementById("goal-name-input");
+  const goalTargetInput = document.getElementById("goal-target-input");
+  const btnSaveGoal = document.getElementById("btn-save-goal");
+
+  // Data Store (In-Memory)
+  let activeGoals = JSON.parse(localStorage.getItem('shopeepay_goals')) || [];
+
+  // Initial Render on Load
+  if (activeGoals.length > 0) {
+    renderGoals();
+  }
+
+  if (btnCreateGoalNav) {
+    btnCreateGoalNav.addEventListener("click", () => {
       if (shopeePayView) shopeePayView.style.display = "none";
       if (createGoalView) {
         createGoalView.style.display = "block";
         window.scrollTo(0, 0);
+        // Reset inputs
+        goalNameInput.value = "";
+        goalTargetInput.value = "";
+        validateGoalInputs();
       }
     });
   }
@@ -253,21 +271,178 @@ document.addEventListener("DOMContentLoaded", () => {
       if (createGoalView) createGoalView.style.display = "none";
       if (shopeePayView) {
         shopeePayView.style.display = "block";
-        // Ensure button container is visible if it was hidden (though it's part of the view)
       }
     });
   }
 
+  // Goal Validation Logic
+  function validateGoalInputs() {
+    if (!goalNameInput || !goalTargetInput || !btnSaveGoal) return;
+
+    const name = goalNameInput.value.trim();
+    const target = goalTargetInput.value.trim();
+
+    // Debugging (Uncomment if needed)
+    // console.log("Input: ", name, target);
+
+    if (name.length > 0 && target.length > 0 && parseInt(target) > 0) {
+      btnSaveGoal.disabled = false;
+      btnSaveGoal.classList.remove("sp-btn-disabled");
+      btnSaveGoal.classList.add("sp-btn-primary");
+    } else {
+      btnSaveGoal.disabled = true;
+      btnSaveGoal.classList.add("sp-btn-disabled");
+      btnSaveGoal.classList.remove("sp-btn-primary");
+    }
+  }
+
+  if (goalNameInput) {
+    goalNameInput.addEventListener("input", validateGoalInputs);
+    // Also listen to change for safer measure
+    goalNameInput.addEventListener("change", validateGoalInputs);
+  }
+
+  if (goalTargetInput) {
+    goalTargetInput.addEventListener("input", validateGoalInputs);
+    goalTargetInput.addEventListener("change", validateGoalInputs);
+  }
+
   // Category Selection Logic
   const catItems = document.querySelectorAll(".cg-cat-item");
+  let selectedCategory = "Kasual"; // Default
+
   catItems.forEach((item) => {
     item.addEventListener("click", function () {
       // Remove active from all
       catItems.forEach((cat) => cat.classList.remove("active"));
       // Add active to clicked
       this.classList.add("active");
+      selectedCategory = this.getAttribute("data-cat");
     });
   });
+
+  // Save Goal Logic
+  // Global Click Listener (Delegation)
+  document.addEventListener("click", (e) => {
+    // 1. Save Goal
+    if (e.target && e.target.id === "btn-save-goal") {
+      const name = goalNameInput.value.trim();
+      const target = parseInt(goalTargetInput.value.trim());
+
+      const newGoal = {
+        id: Date.now(),
+        name: name,
+        target: target,
+        current: 0,
+        category: selectedCategory,
+        icon: getCategoryIcon(selectedCategory)
+      };
+
+      activeGoals.push(newGoal);
+      localStorage.setItem('shopeepay_goals', JSON.stringify(activeGoals)); // Save to LocalStorage
+      renderGoals();
+
+      // Navigate back
+      if (createGoalView) createGoalView.style.display = "none";
+      if (shopeePayView) shopeePayView.style.display = "block";
+    }
+
+    // 2. Open Goal Detail
+    const goalCard = e.target.closest('.goal-card');
+    if (goalCard) {
+      const name = goalCard.querySelector('.goal-name').innerText;
+      const goal = activeGoals.find(g => g.name === name); // Find by name (ID would be better)
+
+      if (goal) {
+        // Populate Detail View
+        document.getElementById('detail-goal-title').innerText = goal.name;
+        document.getElementById('detail-goal-icon').innerHTML = goal.icon; // Icon
+        document.getElementById('detail-target-raw').value = goal.target;
+        document.getElementById('detail-current-amount').innerText = 'Rp' + goal.current.toLocaleString('id-ID');
+
+        const percent = Math.min(100, Math.round((goal.current / goal.target) * 100));
+        document.getElementById('detail-progress-bar').style.width = percent + '%';
+        document.getElementById('detail-target-text').innerText = percent + '% dari Rp' + goal.target.toLocaleString('id-ID');
+
+        // Show View
+        if (shopeePayView) shopeePayView.style.display = "none";
+        const detailView = document.getElementById('goal-detail-view');
+        if (detailView) {
+          detailView.style.display = 'block';
+          window.scrollTo(0, 0);
+        }
+      }
+    }
+  });
+
+  function getCategoryIcon(cat) {
+    switch (cat) {
+      case 'Travel': return '<i class="fas fa-suitcase-rolling"></i>';
+      case 'Gadget': return '<i class="fas fa-mobile-alt"></i>';
+      case 'Fashion': return '<i class="fas fa-tshirt"></i>';
+      case 'Elektronik': return '<i class="fas fa-tv"></i>';
+      default: return '<i class="fas fa-piggy-bank"></i>';
+    }
+  }
+
+  function renderGoals() {
+    const listContainer = document.getElementById("active-goals-list");
+    const emptyState = document.getElementById("sp-empty-state");
+    const activeViewContainer = document.getElementById("sp-active-view-container");
+    const totalBalanceEl = document.getElementById("sp-total-balance");
+
+    if (!listContainer) return;
+
+    listContainer.innerHTML = "";
+    let totalBalance = 0;
+
+    if (activeGoals.length > 0) {
+      // Show Active View, Hide Empty State
+      if (emptyState) emptyState.style.display = "none";
+      if (activeViewContainer) activeViewContainer.style.display = "block";
+
+      activeGoals.forEach(goal => {
+        const currentAmount = goal.current || 0;
+        totalBalance += currentAmount;
+
+        const percent = Math.min(100, Math.round((currentAmount / goal.target) * 100));
+
+        const cardHTML = `
+          <div class="goal-card">
+            <div class="goal-header">
+              <div class="goal-icon-title">
+                <div class="goal-icon">${goal.icon}</div>
+                <div class="goal-info">
+                  <span class="goal-name">${goal.name}</span>
+                  <span class="goal-current-text" style="font-size:12px; color:#666;">Rp${currentAmount.toLocaleString('id-ID')}</span>
+                </div>
+              </div>
+              <i class="fas fa-chevron-right" style="color: #ccc; font-size: 14px;"></i>
+            </div>
+            
+            <div class="goal-progress-bar" style="margin-top: 10px;">
+              <div class="goal-progress-fill" style="width: ${percent}%"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-top:5px; font-size:10px; color:#999;">
+               <span>Rp${currentAmount.toLocaleString('id-ID')}</span>
+               <span>${percent}% dari Rp${goal.target.toLocaleString('id-ID')}</span>
+            </div>
+          </div>
+        `;
+        listContainer.innerHTML += cardHTML;
+      });
+
+      // Update Total
+      if (totalBalanceEl) {
+        totalBalanceEl.innerText = "Rp" + totalBalance.toLocaleString('id-ID');
+      }
+
+    } else {
+      // Show Empty State, Hide Active View
+      if (emptyState) emptyState.style.display = "block";
+      if (activeViewContainer) activeViewContainer.style.display = "none";
+    }
+  }
   // FAMILY WALET NAVIGATION
   const btnFamilyWalet = document.getElementById("btn-family-walet");
   const familyWaletView = document.getElementById("family-walet-view");
@@ -372,8 +547,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSubmit.addEventListener("click", () => {
       alert(
         "Top Up Sebesar Rp" +
-          parseInt(currentAmount).toLocaleString("id-ID") +
-          " Berhasil! (Simulasi)"
+        parseInt(currentAmount).toLocaleString("id-ID") +
+        " Berhasil! (Simulasi)"
       );
       // Close modal
       if (modalOverlay) modalOverlay.style.display = "none";
@@ -471,7 +646,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSaveLimit.addEventListener("click", () => {
       alert(
         "Limit berhasil diubah menjadi Rp" +
-          parseInt(currentLimit || 0).toLocaleString("id-ID")
+        parseInt(currentLimit || 0).toLocaleString("id-ID")
       );
       if (modalOverlay) modalOverlay.style.display = "none";
       if (limitModal) limitModal.style.display = "none";
@@ -546,4 +721,278 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // --- GOAL DETAIL & TRANSACTION LOGIC ---
+  const btnWithdraw = document.getElementById('btn-withdraw');
+  const btnTopupTrigger = document.getElementById('btn-topup-trigger');
+
+  // Modal 1 (Withdrawal)
+  const modalWithdrawal = document.getElementById('withdrawal-modal');
+  const btnCancelWithdrawal = document.getElementById('btn-cancel-withdrawal');
+  const btnProceedWithdrawal = document.getElementById('btn-proceed-withdrawal');
+
+  // Modal 2 (Confirmation)
+  const modalConfirmation = document.getElementById('confirmation-modal');
+  const btnBackConfirmation = document.getElementById('btn-back-confirmation');
+  const btnFinalWithdrawal = document.getElementById('btn-final-withdrawal');
+
+  // Modal 3 (PIN)
+  const modalPin = document.getElementById('pin-modal');
+  const pinKeys = document.querySelectorAll('.pin-key');
+  const pinDots = document.querySelectorAll('.pin-dot');
+  const pinBackspace = document.getElementById('pin-backspace');
+  let pinValue = "";
+
+  // Modal 4 (Success)
+  const modalSuccess = document.getElementById('success-modal');
+  const btnCloseSuccess = document.getElementById('btn-close-success');
+  const btnCheckDetail = document.getElementById('btn-check-detail');
+
+  // Top Up Modal
+  const modalTopup = document.getElementById('topup-modal');
+  const btnCancelTopup = document.getElementById('btn-cancel-topup');
+  const btnConfirmTopup = document.getElementById('btn-confirm-topup');
+  const inputTopupAmount = document.getElementById('input-topup-amount');
+
+  // Data placeholders
+  const confirmAmounts = document.querySelectorAll('.confirm-amount');
+  const confirmGoalNames = document.querySelectorAll('.confirm-goal-name');
+
+  const detailCurrentAmount = document.getElementById('detail-current-amount');
+  const detailGoalTitle = document.getElementById('detail-goal-title');
+  const detailProgressBar = document.getElementById('detail-progress-bar');
+  const detailTargetText = document.getElementById('detail-target-text');
+
+  function updatePinDots() {
+    pinDots.forEach((dot, index) => {
+      if (index < pinValue.length) {
+        dot.style.background = "#ee4d2d";
+        dot.style.borderColor = "#ee4d2d";
+      } else {
+        dot.style.background = "transparent";
+        dot.style.borderColor = "#ccc";
+      }
+    });
+  }
+
+  function updateConfirmationData() {
+    if (!detailCurrentAmount || !detailGoalTitle) return;
+    const currentAmount = detailCurrentAmount.innerText;
+    const goalName = detailGoalTitle.innerText;
+
+    confirmAmounts.forEach(el => el.innerText = currentAmount);
+    confirmGoalNames.forEach(el => el.innerText = goalName);
+  }
+
+  // --- Flow Listeners ---
+
+  // Withdrawal Flow
+  if (btnWithdraw) {
+    btnWithdraw.addEventListener('click', function () {
+      modalWithdrawal.style.display = 'flex';
+    });
+  }
+  if (btnCancelWithdrawal) {
+    btnCancelWithdrawal.addEventListener('click', function () {
+      modalWithdrawal.style.display = 'none';
+    });
+  }
+  if (btnProceedWithdrawal) {
+    btnProceedWithdrawal.addEventListener('click', function () {
+      updateConfirmationData();
+      modalWithdrawal.style.display = 'none';
+      modalConfirmation.style.display = 'flex';
+    });
+  }
+  if (btnBackConfirmation) {
+    btnBackConfirmation.addEventListener('click', function () {
+      modalConfirmation.style.display = 'none';
+      modalWithdrawal.style.display = 'flex';
+    });
+  }
+  if (btnFinalWithdrawal) {
+    btnFinalWithdrawal.addEventListener('click', function () {
+      modalConfirmation.style.display = 'none';
+      modalPin.style.display = 'flex';
+      pinValue = "";
+      updatePinDots();
+    });
+  }
+
+  // PIN Logic
+  pinKeys.forEach(key => {
+    key.addEventListener('click', function () { /* Use function to access 'this' */
+      const val = this.innerText;
+      if (pinValue.length < 6) {
+        pinValue += val;
+        updatePinDots();
+
+        if (pinValue.length === 6) {
+          setTimeout(() => {
+            modalPin.style.display = 'none';
+            modalSuccess.style.display = 'flex';
+          }, 300);
+        }
+      }
+    });
+  });
+
+  if (pinBackspace) {
+    pinBackspace.addEventListener('click', function () {
+      pinValue = pinValue.slice(0, -1);
+      updatePinDots();
+    });
+  }
+
+  // Success & Close
+  if (btnCloseSuccess) {
+    btnCloseSuccess.addEventListener('click', function () {
+      // 1. Identify goal to remove
+      if (detailGoalTitle) {
+        const goalName = detailGoalTitle.innerText;
+        // Filter out the goal
+        activeGoals = activeGoals.filter(g => g.name !== goalName);
+
+        // 2. Persist changes
+        localStorage.setItem('shopeepay_goals', JSON.stringify(activeGoals));
+
+        // 3. Re-render list
+        renderGoals();
+      }
+
+      modalSuccess.style.display = 'none';
+      // Navigate back to goals views
+      const receipt = document.getElementById('transaction-detail-view');
+      const detail = document.getElementById('goal-detail-view');
+      if (receipt) receipt.style.display = 'none';
+      if (detail) detail.style.display = 'none';
+
+      if (shopeePayView) {
+        shopeePayView.style.display = 'block';
+        window.scrollTo(0, 0);
+      }
+    });
+  }
+
+  // Top Up Flow
+  if (btnTopupTrigger) {
+    btnTopupTrigger.addEventListener('click', () => {
+      modalTopup.style.display = 'flex';
+    });
+  }
+  if (btnCancelTopup) {
+    btnCancelTopup.addEventListener('click', () => {
+      modalTopup.style.display = 'none';
+    });
+  }
+  if (btnConfirmTopup) {
+    btnConfirmTopup.addEventListener('click', () => {
+      const amount = parseInt(inputTopupAmount.value || 0);
+      if (amount > 0) {
+        // Update UI directly for demo
+        let current = parseInt(detailCurrentAmount.innerText.replace(/[^0-9]/g, '')) || 0;
+        let target = parseInt(document.getElementById('detail-target-raw').value) || 1;
+
+        current += amount;
+        detailCurrentAmount.innerText = 'Rp' + current.toLocaleString('id-ID');
+
+        const percent = Math.min(100, Math.round((current / target) * 100));
+        detailProgressBar.style.width = percent + '%';
+        detailTargetText.innerText = percent + '% dari Rp' + target.toLocaleString('id-ID');
+
+        // Find and update global object (simplistic)
+        const goalTitle = detailGoalTitle.innerText;
+        const g = activeGoals.find(g => g.name === goalTitle);
+        if (g) {
+          g.current = current;
+          renderGoals(); // Update list
+        }
+
+        modalTopup.style.display = 'none';
+        alert("Top Up Berhasil!");
+      }
+    });
+  }
+
+  // Navigation for Detail View
+  const btnBackDetailGoal = document.getElementById('btn-back-detail-goal');
+  if (btnBackDetailGoal) {
+    btnBackDetailGoal.addEventListener('click', () => {
+      const detailView = document.getElementById('goal-detail-view');
+      if (detailView) detailView.style.display = 'none';
+      if (shopeePayView) shopeePayView.style.display = 'block';
+    });
+  }
+
+  // Receipt View
+  const transactionDetailView = document.getElementById('transaction-detail-view');
+  const btnBackDetailReceipt = document.getElementById('btn-back-detail');
+
+  if (btnCheckDetail) {
+    btnCheckDetail.addEventListener('click', function () {
+      modalSuccess.style.display = 'none';
+      const detailView = document.getElementById('goal-detail-view');
+      if (detailView) detailView.style.display = 'none';
+      if (transactionDetailView) transactionDetailView.style.display = 'flex';
+      window.scrollTo(0, 0);
+    });
+  }
+
+  if (btnBackDetailReceipt) {
+    btnBackDetailReceipt.addEventListener('click', () => {
+      if (transactionDetailView) transactionDetailView.style.display = 'none';
+      if (shopeePayView) shopeePayView.style.display = 'block';
+    });
+  }
+
+  // Edit View Logic
+  const editGoalView = document.getElementById('edit-goal-view');
+  const btnTriggerEdit = document.getElementById('btn-trigger-edit');
+  const btnBackEdit = document.getElementById('btn-back-edit-goal');
+  const btnSaveEdit = document.getElementById('btn-save-edit');
+  const inputEditName = document.getElementById('input-edit-name');
+  const inputEditAmount = document.getElementById('input-edit-amount');
+
+  if (btnTriggerEdit) {
+    btnTriggerEdit.addEventListener('click', () => {
+      inputEditName.value = detailGoalTitle.innerText;
+      inputEditAmount.value = document.getElementById('detail-target-raw').value;
+
+      document.getElementById('goal-detail-view').style.display = 'none';
+      editGoalView.style.display = 'block';
+      window.scrollTo(0, 0);
+    });
+  }
+  if (btnBackEdit) {
+    btnBackEdit.addEventListener('click', () => {
+      editGoalView.style.display = 'none';
+      document.getElementById('goal-detail-view').style.display = 'block';
+    });
+  }
+  if (btnSaveEdit) {
+    btnSaveEdit.addEventListener('click', () => {
+      // Update Detail View
+      detailGoalTitle.innerText = inputEditName.value;
+      const newTarget = parseInt(inputEditAmount.value) || 0;
+      document.getElementById('detail-target-raw').value = newTarget;
+
+      // Re-calc progress
+      let current = parseInt(detailCurrentAmount.innerText.replace(/[^0-9]/g, '')) || 0;
+      const percent = Math.min(100, Math.round((current / newTarget) * 100));
+
+      detailTargetText.innerText = percent + '% dari Rp' + newTarget.toLocaleString('id-ID');
+      detailProgressBar.style.width = percent + '%';
+
+      // Update global object
+      const g = activeGoals.find(g => g.name === inputEditName.value); // weak match
+      if (g) {
+        g.name = inputEditName.value;
+        g.target = newTarget;
+        renderGoals();
+      }
+
+      editGoalView.style.display = 'none';
+      document.getElementById('goal-detail-view').style.display = 'block';
+    });
+  }
 });
