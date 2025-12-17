@@ -821,8 +821,6 @@ body {
   /* Hangs a bit */
 }
 
-
-
 .deal-sub {
   font-size: 11px;
   color: #555;
@@ -979,8 +977,6 @@ body {
   border-bottom: 1px solid #eee;
   box-shadow: none;
 }
-
-
 
 .deal-img-placeholder {
   height: 60px;
@@ -1204,9 +1200,11 @@ body {
   position: relative;
   overflow: hidden;
   /* decorative circles */
-  background-image: radial-gradient(circle at top right,
-      rgba(255, 255, 255, 0.2) 20px,
-      transparent 21px);
+  background-image: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.2) 20px,
+    transparent 21px
+  );
 }
 
 .banner-content {
@@ -1788,8 +1786,6 @@ body {
   color: #ee4d2d;
 }
 
-
-
 div.divider-thick {
   height: 10px;
   background-color: #f5f5f5;
@@ -1877,8 +1873,8 @@ div.divider-thick {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -1889,15 +1885,15 @@ div.divider-thick {
   left: 3px;
   bottom: 3px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #ee4d2d;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
@@ -1925,7 +1921,13 @@ input:checked+.slider:before {
 
 /* Overwrite active button state */
 .sp-btn-primary.active-state {
-  background: #ee4d2d;
-  cursor: pointer;
-  color: white;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
 }
